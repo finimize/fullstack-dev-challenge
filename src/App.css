@@ -45,3 +45,12 @@ p {
 	background-color: #00b2ff;
 	padding: 20px;
 }
+
+.financial-content {
+	padding: 20px;
+}
+
+.input-label {
+	margin-bottom: 4px;
+	margin-top: 12px;
+}
