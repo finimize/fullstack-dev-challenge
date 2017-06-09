@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './CurrencyInput.css'
 
-class CurrencyInput extends Component {
+export default class CurrencyInput extends Component {
 	constructor(props) {
 		super(props)
 
@@ -42,5 +42,3 @@ class CurrencyInput extends Component {
 CurrencyInput.propTypes = {
 	defaultValue: PropTypes.number
 }
-
-export default CurrencyInput

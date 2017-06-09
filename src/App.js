@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CurrencyInput from './components/CurrencyInput'
+import SliderInput from './components/SliderInput'
 import './App.css';
 
 class App extends Component {
@@ -12,8 +13,12 @@ class App extends Component {
 				<div className="financial-content">
 					<p className="input-label">How much have you saved?</p>
 					<CurrencyInput defaultValue={0}/>
+
 					<p className="input-label">How much will you save each month?</p>
 					<CurrencyInput defaultValue={0}/>
+
+					<p className="input-label">How much interest will you earn per year?</p>
+					<SliderInput defaultValue={4}/>
 				</div>
       </div>
     );
