@@ -1,11 +1,7 @@
-.App {
+/*.App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
 .App-header {
   background-color: #222;
@@ -16,9 +12,43 @@
 
 .App-intro {
   font-size: large;
+}*/
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Avenir Next', 'Avenir', 'Lato', 'Helvetica', 'Arial', 'Sans-Serif';
+	font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+h1 {
+	font-size: 24px;
+	line-height: 28px;
+	color: #1D1F20;
+	text-align: center;
+}
+
+h2 {
+	font-size: 20px;
+	line-height: 24px;
+	color: #1D1F20;
+	text-align: center;
+}
+
+h3 {
+	font-size: 16px;
+	line-height: 20px;
+	color: #1D1F20;
+}
+
+h4 {
+	font-size: 14px;
+	color: #1D1F20;
+	line-height: 18px;
+}
+
+p {
+	font-family: 'Avenir Next', 'Avenir', 'Lato', 'Helvetica', 'Arial', 'Sans-Serif';
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	color: #1D1F20;
 }
