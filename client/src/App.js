@@ -5,6 +5,17 @@ import DisplayGraph from './components/DisplayGraph'
 import './App.css';
 
 class App extends Component {
+	constructor(props) {
+		super(props)
+
+		this.state = {
+		}
+	}
+	componentWillMount() {
+		fetch('/test')
+			.then((res) => res.json)
+			.then(res => this.setState({message: res.message}))
+	}
   render() {
     return (
       <div className="App">
@@ -14,7 +25,7 @@ class App extends Component {
 				<div className="financial-inputs">
 					<p className="input-label">How much have you saved?</p>
 					<CurrencyInput defaultValue={0}/>
-
+{this.state.message}
 					<p className="input-label">How much will you save each month?</p>
 					<CurrencyInput defaultValue={0}/>
 
