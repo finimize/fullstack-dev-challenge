@@ -4,12 +4,13 @@
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "victory": "^0.21.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"
   },
-	"proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:3001/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -22,21 +22,23 @@ class App extends Component {
 					<SliderInput defaultValue={4}/>
 				</div>
 				<div className="financial-display">
+					{/*We have included some sample data here, you will need to replace this
+					with your own. Feel free to change the data structure if you wish.*/}
 					<DisplayGraph data={[
 						{
-							year: 1,
+							month: 1,
 							amount:500
 						},
 						{
-							year: 2,
+							month: 2,
 							amount:700
 						},
 						{
-							year: 3,
+							month: 3,
 							amount:1000
 						},
 						{
-							year: 4,
+							month: 4,
 							amount:1500
 						}
 					]}/>
