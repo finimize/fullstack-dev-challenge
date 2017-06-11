@@ -9,11 +9,6 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-app.get('/test', (req, res) => {
-	console.log('hello');
-	res.send({'message': 'hello'})
-})
-
 app.listen(app.get('port'), () => {
   console.log(`Find the server at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
 });
