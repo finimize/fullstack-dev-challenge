@@ -16,7 +16,7 @@ export default class DisplayGraph extends Component {
 
 		const baseLabelStyles = {
   		fontFamily: "'Avenir Next', 'Avenir', 'Lato', 'Helvetica', 'Arial', 'Sans-Serif'",
-  		fontSize: 16,
+  		fontSize: 2,
   		letterSpacing: 'normal',
   		padding: 10,
   		fill: "#00b2ff",
@@ -24,8 +24,14 @@ export default class DisplayGraph extends Component {
 		};
 
 		const theme = {
+			area: {
+				style: {
+					labels: baseLabelStyles
+				}
+			},
 			axis: Object.assign({
 				style: {
+					axisLabel: baseLabelStyles,
 					grid: {
 						fill: "transparent",
 						stroke: "transparent"
@@ -51,8 +57,8 @@ export default class DisplayGraph extends Component {
 
 		return (
 			<div>
-				<VictoryChart animate={{duration: 300}} theme={theme}>
-					<VictoryLine {...{data}} x="month" y="amount"/>
+				<VictoryChart animate={{duration: 100}} theme={theme}>
+					<VictoryLine {...{data}} y="amount"/>
 				</VictoryChart>
 			</div>
 		);
