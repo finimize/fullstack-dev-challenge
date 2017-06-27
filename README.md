@@ -31,12 +31,14 @@ over the next 50 years, to a monthly precision. This should assume that the mont
 * You should manage app state using Redux (even though it is arguably overkill in this particular case)
 
 ### Our Guidance
-The challenge should not take any more than 2-5 hours. We are most interested in the quality of your code, so please do not feel the need to spend hours putting together a ground-breaking UI. You do not need to complete the challenge in one go.
+The challenge should not take any more than 2-5 hours. You do not need to complete the challenge in one go.
 
 We are keen to see how much you think is enough, and how much would go into a Minimum Viable Product. As a guide, elegant and simple wins over feature rich every time.
 
 Do you test drive your code? This is something we value. We want to see that you are familiar and able to create a build process for your code that means it is easy to build, test and run. Any indicator of BDD/TDD would make us smile.
 
 Although the API might be returning relatively straightforward content, please try and write the API code as if you were building something more complex. We would like to gain an idea of how you would go about structuring API code.
+
+Feel free to make any changes to the UI you see fit.
 
 When you are finished, you should send us a link to the codebase, preferably via git (e.g. github) showing multiple commits, so we can see its evolution.
