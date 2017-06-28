@@ -12,7 +12,7 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
     "client": "node scripts/start-client.js",
-    "install": "cd client && npm install && cd .."
+    "install": "cd client && yarn install && cd .."
   },
   "devDependencies": {
     "concurrently": "3.1.0"
