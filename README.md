@@ -31,7 +31,7 @@ over the next 50 years, to a monthly precision. This should assume that the mont
 * You should manage app state using Redux (even though it is arguably overkill in this particular case)
 
 ### Our Guidance
-The challenge should not take any more than 2-5 hours. You do not need to complete the challenge in one go.
+The challenge should not take any more than 2-4 hours. You do not need to complete the challenge in one go.
 
 We are keen to see how much you think is enough, and how much would go into a Minimum Viable Product. As a guide, elegant and simple wins over feature rich every time.
 
