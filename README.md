@@ -6,11 +6,11 @@ boilerplate code. Feel free to make any changes you wish - the existing code is 
 
 ## Run Instructions
 
-To run the app, `cd` into the project root directory and run `yarn run start`
+To run the app, `cd` into the project root directory and run `yarn start`
 (install Yarn [here](https://yarnpkg.com/en/docs/install)).
 
 There is one basic test written in the client, which you can run by performing
-`cd client` and then `yarn run test`. Any new client tests can be added using Jest.
+`cd client` and then `yarn test`. Any new client tests can be added using Jest.
 
 Mocha has been installed on the server to allow you to create server tests,
 although none have been written yet.
