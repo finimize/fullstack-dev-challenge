@@ -39,6 +39,6 @@ Do you test drive your code? This is something we value - any indicator of BDD/T
 
 Although the API might be returning relatively straightforward content, please try and write the API code as if you were building something more complex. We would like to gain an idea of how you would go about structuring API code.
 
-Feel free to make any changes to the UI you see fit.
+Feel free to make any changes to the UI you see fit, although please don't prioritise styling! Something basic will do just fine.
 
 When you are finished, you should send us a link to the codebase, preferably via git (e.g. github) showing multiple commits, so we can see its evolution.
