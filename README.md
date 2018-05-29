@@ -27,7 +27,7 @@ over the next 50 years, to a monthly precision. This should assume that the mont
 * It should allow the user to select how often interest is paid - either 'Monthly', 'Quarterly' or 'Annually'
 * All calculations must take place server-side, and all monthly projection data should be returned via an endpoint
 * The calculations must be triggered onChange of any input, to give live feedback on the input data. The performance (try the slider) should be reasonable.
-* You should manage app state using Redux (even though it is arguably overkill in this particular case)
+* You can use any tech stack on the client you like to manage app state and server communication (e.g. Redux with Thunk/Saga/other API client, Relay/Apollo/GraphQL etc.)
 
 ### Our Guidance
 The challenge should not take any more than 2-4 hours. You do not need to complete the challenge in one go.
