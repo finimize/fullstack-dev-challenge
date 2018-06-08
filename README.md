@@ -6,7 +6,7 @@ boilerplate code. Feel free to make any changes you wish - the existing code is 
 
 ## Run Instructions
 
-To run the app, `cd` into the project root directory and run `yarn start`
+To run the app, `cd` into the project root directory and run `yarn install` & `yarn start`
 (install Yarn [here](https://yarnpkg.com/en/docs/install)).
 
 There is one basic test written in the client, which you can run by performing
