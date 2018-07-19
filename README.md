@@ -32,12 +32,10 @@ over the next 50 years, to a monthly precision. This should assume that the mont
 ### Our Guidance
 The challenge should not take any more than 2-4 hours. You do not need to complete the challenge in one go.
 
-We are keen to see how much you think is enough, and how much would go into a Minimum Viable Product. As a guide, elegant and simple wins over feature rich every time.
-
-Do you test drive your code? This is something we value - any indicator of BDD/TDD would make us smile.
-
 Although the API might be returning relatively straightforward content, please try and write the API code as if you were building something more complex. We would like to gain an idea of how you would go about structuring API code.
 
 Feel free to make any changes to the UI you see fit, although please don't prioritise styling! Something basic will do just fine.
+
+Do you test drive your code? This is something we value - any indicator of BDD/TDD would make us smile.
 
 When you are finished, you should send us a link to the codebase, preferably via git (e.g. github) showing multiple commits, so we can see its evolution.
