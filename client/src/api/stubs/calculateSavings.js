@@ -1,4 +1,4 @@
-export const CALCULATE_SAVINGS_RESULT = {
+const CALCULATE_SAVINGS_RESULT = {
   calculations: [
     {
       month: 1,
@@ -18,3 +18,5 @@ export const CALCULATE_SAVINGS_RESULT = {
     },
   ],
 }
+
+module.exports.CALCULATE_SAVINGS_RESULT = CALCULATE_SAVINGS_RESULT
