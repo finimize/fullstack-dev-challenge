@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { CurrencyInput } from './CurrencyInput'
-import SliderInput from './SliderInput'
+import { SliderInput } from './SliderInput'
+import { SelectInput } from './SelectInput'
 
 export class FinancialInput extends React.PureComponent {
   state = {
     initialSavings: 0,
     monthlySavings: 0,
     yearlyInterest: 4,
-    interestMonthlyRecurrency: 1,
+    interestMonthlyRecurrency: 'Monthly',
   }
 
   componentDidUpdate = () => {
@@ -34,6 +35,15 @@ export class FinancialInput extends React.PureComponent {
         <SliderInput
           value={this.state.yearlyInterest}
           onChange={yearlyInterest => this.setState({ yearlyInterest })}
+        />
+
+        <p className="input-label">How often is the interest rate paid?</p>
+        <SelectInput
+          value={this.state.interestMonthlyRecurrency}
+          values={['Monthly', 'Quarterly', 'Yearly']}
+          onChange={interestMonthlyRecurrency =>
+            this.setState({ interestMonthlyRecurrency })
+          }
         />
       </div>
     )

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './SliderInput.css'
 
-export default class SliderInput extends Component {
+export class SliderInput extends Component {
   render() {
     return (
       <div className="fmz-slider">
