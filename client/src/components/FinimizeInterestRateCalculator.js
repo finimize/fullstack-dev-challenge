@@ -16,9 +16,9 @@ export class FinimizeInterestRateCalculator extends React.Component {
         <Header />
         <FinancialInput
           onVariablesUpdated={debounce(variables => {
-            calculateSavings(variables).then(result =>
-              this.setState({ calculations: result.calculations }),
-            )
+            calculateSavings(variables).then(result => {
+              this.setState({ calculations: result.calculations })
+            })
           }, 1000)}
         />
         <FinancialDisplay calculations={this.state.calculations} />

@@ -12,7 +12,13 @@ export class FinancialInput extends React.PureComponent {
     interestMonthlyRecurrency: 'Monthly',
   }
 
-  componentDidUpdate = () => {
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState !== this.state) {
+      this.props.onVariablesUpdated(this.state)
+    }
+  }
+
+  componentDidMount = () => {
     this.props.onVariablesUpdated(this.state)
   }
 
