@@ -31,7 +31,10 @@ export class FinancialInput extends React.PureComponent {
         />
 
         <p className="input-label">How much interest will you earn per year?</p>
-        <SliderInput defaultValue={4} />
+        <SliderInput
+          value={this.state.yearlyInterest}
+          onChange={yearlyInterest => this.setState({ yearlyInterest })}
+        />
       </div>
     )
   }

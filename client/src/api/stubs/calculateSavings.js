@@ -1,16 +1,20 @@
 export const CALCULATE_SAVINGS_RESULT = {
-  monthlyDeposits: [
+  calculations: [
     {
-      amount: 1,
+      month: 1,
+      amount: 500,
     },
     {
-      amount: 20,
+      month: 2,
+      amount: 700,
     },
     {
-      amount: 40,
+      month: 3,
+      amount: 1000,
     },
     {
-      amount: 100,
+      month: 4,
+      amount: 1500,
     },
   ],
 }
