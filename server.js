@@ -1,9 +1,8 @@
 const express = require('express')
 const express_graphql = require('express-graphql')
 const { buildSchema } = require('graphql')
-const {
-  CALCULATE_SAVINGS_RESULT,
-} = require('./client/src/api/stubs/calculateSavings')
+const cors = require('cors')
+const api = require('./server/api')
 
 const schema = buildSchema(`
     type Query {
@@ -23,13 +22,6 @@ const schema = buildSchema(`
     }
 `)
 
-const calculateSavings = args => {
-  console.log(args)
-  return CALCULATE_SAVINGS_RESULT.calculations
-}
-
-const root = { calculateSavings }
-
 const app = express()
 
 app.set('port', process.env.PORT || 3001)
@@ -41,9 +33,10 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(
   '/graphql',
+  cors(),
   express_graphql({
     schema: schema,
-    rootValue: root,
+    rootValue: api,
     graphiql: true,
   }),
 )
