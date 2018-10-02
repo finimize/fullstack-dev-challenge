@@ -1,0 +1,9 @@
+.fmz-select {
+  text-align: center;
+  float: left;
+}
+
+.fmz-select p {
+  margin-bottom: 4px;
+  margin-top: 4px;
+}

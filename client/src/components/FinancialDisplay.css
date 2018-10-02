@@ -1,0 +1,13 @@
+.fmz-display {
+  text-align: center;
+  display: block;
+}
+
+.fmz-display .months {
+  padding: 20px;
+}
+
+.fmz-display .month {
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
