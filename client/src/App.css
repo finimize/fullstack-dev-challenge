@@ -1,56 +1,38 @@
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Avenir Next', 'Avenir', 'Lato', 'Helvetica', 'Arial', 'Sans-Serif';
-	font-weight: 600;
+.App {
+  text-align: center;
 }
 
-h1 {
-	font-size: 24px;
-	line-height: 28px;
-	color: #1D1F20;
-	text-align: center;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-h2 {
-	font-size: 20px;
-	line-height: 24px;
-	color: #1D1F20;
-	text-align: center;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
-h3 {
-	font-size: 16px;
-	line-height: 20px;
-	color: #1D1F20;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-h4 {
-	font-size: 14px;
-	color: #1D1F20;
-	line-height: 18px;
+.App-link {
+  color: #61dafb;
 }
 
-p {
-	font-family: 'Avenir Next', 'Avenir', 'Lato', 'Helvetica', 'Arial', 'Sans-Serif';
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 20px;
-	color: #1D1F20;
-}
-
-.fmz-white-font {
-	color: #ffffff;
-}
-
-.header-banner {
-	background-color: #00b2ff;
-	padding: 20px;
-}
-
-.financial-inputs {
-	padding: 20px;
-}
-
-.input-label {
-	margin-bottom: 4px;
-	margin-top: 12px;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
