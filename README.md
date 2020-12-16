@@ -54,6 +54,8 @@ Once complete, please drop us a brief note (either an email, or in the readme so
 * What bits of your solution you like
 * What bits of your solution you’d like to improve upon
 
+Any images/gifs of the finished product would be helpful too!
+
 ### Tooling
 
 The frontend contains some tooling you might be familiar with
