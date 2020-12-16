@@ -9,9 +9,9 @@ To run the app, `cd` into the project root directory and run `yarn install` & `y
 (install Yarn [here](https://yarnpkg.com/en/docs/install)).
 
 There is one basic test written in the client, which you can run by performing
-`cd client` and then `yarn test`. Any new client tests can be added using Jest.
+`cd client` and then `yarn test`. If you want to add new client tests you can use Jest.
 
-Mocha has been installed on the server to allow you to create server tests,
+Mocha has been installed on the server to allow you to create server tests if you wish,
 although none have been written yet.
 
 ## The challenge
