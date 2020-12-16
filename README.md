@@ -49,7 +49,7 @@ Although the API might be relatively straightforward, please try and write the A
 
 Other than that, feel free to take the challenge in any directions you feel best showcase your strengths!
 
-Once complete, would you mind dropping us a brief note (either an email, or in the readme somewhere) explaining:
+Once complete, please drop us a brief note (either an email, or in the readme somewhere) explaining:
 * How you approached the challenge
 * What bits of your solution you like
 * What bits of your solution you’d like to improve upon
