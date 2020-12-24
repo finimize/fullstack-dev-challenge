@@ -8,6 +8,8 @@ order to form the submission for the challenge. Once cloned, it will give you a 
 To run the app, `cd` into the project root directory and run `yarn install` & `yarn start`
 (install Yarn [here](https://yarnpkg.com/en/docs/install)).
 
+Depending on your environment, you might need to install concurrently / Typescript globally.
+
 There is one basic test written in the client, which you can run by performing
 `cd client` and then `yarn test`. If you want to add new client tests you can use Jest.
 
@@ -64,7 +66,9 @@ The frontend contains some tooling you might be familiar with
 
 #### Typescript
 
-If you like to use Typescript in your workflow, you should get any warnings/errors appear in your terminal after running `yarn start`.
+If you like to use Typescript in your workflow, you should get any client warnings/errors appear in your terminal after running `yarn start`.
+
+You can also run the server types using `yarn types`.
 
 We believe strong TS typing will make your code much more robust.
 
