@@ -1,0 +1,26 @@
+service: finimize-challenge
+
+provider:
+    name: aws
+    runtime: nodejs12.x
+    stage: production
+    environment:
+        NODE_ENV: production
+    region: eu-west-2
+    apiGateway:
+        shouldStartNameWithService: true
+
+custom:
+    functionsBasePath: src
+
+functions:
+    proxy:
+        handler: server.handler
+        events:
+            - http: ANY /
+            - http: 'ANY /{proxy+}'
+
+plugins:
+    - serverless-functions-base-path
+    - serverless-webpack
+    - serverless-offline

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "lib": ["es2019"],
+    "strict": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es2019",
+    "outDir": "lib",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["node_modules", "client"]
+}

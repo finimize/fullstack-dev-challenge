@@ -7,3 +7,8 @@ client/node_modules
 npm-debug.log
 .idea
 .git
+
+# build/deploymnent
+.client-build
+.serverless
+.webpack
