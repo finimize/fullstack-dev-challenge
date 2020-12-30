@@ -1,6 +1,9 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
+import { format } from 'd3-format'
+
 import theme from '../theme'
+import { useLoadingColor } from '../utils'
 
 type Props = {
     xAxisData: number[] | string[]
@@ -8,9 +11,13 @@ type Props = {
     title?: string
     xLabel?: string
     yLabel?: string
+    loading?: boolean
+    error?: boolean
 }
 
-const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
+const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel, loading, error }: Props) => {
+    const loadingColor = useLoadingColor(loading)
+
     const legendOptions = {
         display: false,
     }
@@ -26,6 +33,9 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
                 {
                     scaleLabel: { display: !!yLabel, labelString: yLabel },
                     gridlines: { display: false },
+                    ticks: {
+                        callback: format('.2s'),
+                    },
                 },
             ],
             xAxes: [
@@ -44,7 +54,7 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
                 datasets: [
                     {
                         backgroundColor: theme.colors.blue100,
-                        borderColor: theme.colors.primary,
+                        borderColor: error ? theme.colors.danger : loadingColor,
                         data: yAxisData,
                     },
                 ],

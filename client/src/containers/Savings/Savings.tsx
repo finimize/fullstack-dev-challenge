@@ -106,6 +106,8 @@ export const Savings = () => {
                         yAxisData={yearlySavingsProjections}
                         xLabel="Years"
                         yLabel="Amount [£]"
+                        loading={loading}
+                        error={!formIsValid || !!error}
                     />
                 </VStack>
             </Container>
