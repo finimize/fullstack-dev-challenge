@@ -66,18 +66,18 @@ If all goes well you should be able to have a working app that looks like this:
 -   Response type:
 
 ```typescript
-{
+type ResponseBody = {
     projections?: {
         [interestRatePercentage: number]: {
             [year: number]: number
         }
     }
-    errors?: {
-        value: string,
-        msg: string,
-        param: string,
-        location: string,
-    }[]
+    errors?: Array<{
+        value: string
+        msg: string
+        param: string
+        location: string
+    }>
 }
 ```
 
