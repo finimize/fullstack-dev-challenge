@@ -1,6 +1,6 @@
 export interface Validator {
     message: string
-    checker: (value: unknown) => boolean
+    condition: (value: unknown) => boolean
 }
 
 export interface ValidationError {
@@ -9,22 +9,28 @@ export interface ValidationError {
 }
 
 export const getFormValidator = <
-    FormValidators extends Record<string, Validator>,
+    FormValidators extends Record<string, Validator[]>,
     FormValues extends Record<keyof FormValidators, any>
 >(
     formValidators: FormValidators
 ) => (formValues: FormValues) => {
     const formValueKeys = Object.keys(formValidators) as (keyof FormValidators)[]
 
-    const isInvalidValue = (formValueKey: keyof FormValidators) =>
-        !formValidators[formValueKey]?.checker(formValues[formValueKey])
+    return formValueKeys.reduce((validationErrors, formValueKey) => {
+        const conditionIsMet = (validator: Validator) =>
+            validator.condition(formValues[formValueKey])
 
-    const toValidationError = (formValueKey: keyof FormValidators): ValidationError => ({
-        key: formValueKey as string,
-        message: formValidators[formValueKey]?.message || '',
-    })
+        const toValidationError = (validator: Validator) => ({
+            key: formValueKey as string,
+            message: validator.message,
+        })
 
-    return formValueKeys.filter(isInvalidValue).map(toValidationError)
+        const formValueKeyErrors = formValidators[formValueKey]
+            .filter(conditionIsMet)
+            .map(toValidationError)
+
+        return [...validationErrors, ...formValueKeyErrors]
+    }, [] as ValidationError[])
 }
 
 export const isGTE = (value: unknown, num: number) => {

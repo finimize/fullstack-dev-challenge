@@ -8,6 +8,10 @@ import { toUserFriendlyString, APIValidationError } from './validation'
 const ROOT_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : ''
 const API_BASE_URL = `${ROOT_URL}/production/api/v1`
 
+const DEFAULT_OPTIONS = {
+    headers: { 'cache-control': 'no-cache' },
+}
+
 export interface BaseApiResponse {
     errors?: APIValidationError[]
 }
@@ -22,7 +26,7 @@ export const useHttpFetch = <Data extends BaseApiResponse>(
         url = API_BASE_URL
     }
 
-    const result = useFetch<Data>(url, options, dependencies, ...rest)
+    const result = useFetch<Data>(url, { ...DEFAULT_OPTIONS, ...options }, dependencies, ...rest)
 
     const toast = useToast()
 

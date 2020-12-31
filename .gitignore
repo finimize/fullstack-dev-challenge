@@ -9,6 +9,5 @@ npm-debug.log
 .git
 
 # build/deploymnent
-.client-build
 .serverless
 .webpack

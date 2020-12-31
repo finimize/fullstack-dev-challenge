@@ -19,14 +19,26 @@ const YEAR_RANGE_TO_FETCH = [0, 50] as [number, number]
 type FormValues = typeof INITIAL_FORM_VALUES
 
 const FORM_VALIDATORS = getFormValidator({
-    initialSavingsAmount: {
-        message: 'Initial savings amount should be equal or greater than zero',
-        checker: (val) => isGTE(val, 0),
-    },
-    monthlyDeposit: {
-        message: 'Monthly deposit amount should be equal or greater than zero',
-        checker: (val) => isGTE(val, 0),
-    },
+    initialSavingsAmount: [
+        {
+            message: 'Initial savings amount should be equal or greater than zero',
+            condition: (val) => !isGTE(val, 0),
+        },
+        {
+            message: 'Initial savings amount too big',
+            condition: (val) => !Number.isSafeInteger(Number(val)),
+        },
+    ],
+    monthlyDeposit: [
+        {
+            message: 'Monthly deposit amount should be equal or greater than zero',
+            condition: (val) => !isGTE(val, 0),
+        },
+        {
+            message: 'Monthly deposit amount too big',
+            condition: (val) => !Number.isSafeInteger(Number(val)),
+        },
+    ],
 })
 
 export const Savings = () => {

@@ -34,7 +34,7 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel, loading, error
                     scaleLabel: { display: !!yLabel, labelString: yLabel },
                     gridlines: { display: false },
                     ticks: {
-                        callback: format('.2s'),
+                        callback: format(',.0f'),
                     },
                 },
             ],
