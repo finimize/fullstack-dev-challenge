@@ -1,74 +1,131 @@
 # Finimize Full-Stack Development Challenge
 
-This repo is intended to be forked and uploaded to your own Github account in
-order to form the submission for the challenge. Once cloned, it will give you a basic server with a React app, so you don't have to spend time writing boilerplate code. Feel free to make any changes you wish - the existing code is purely intended to get you going faster.
+This repo is a response to Finimize's full-stack dev challenge!
 
-## Run Instructions
+## Requirements
 
-To run the app, `cd` into the project root directory and run `yarn install` & `yarn start`
-(install Yarn [here](https://yarnpkg.com/en/docs/install)).
+You will need [node.js](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/en/docs/install) installed.
 
-There is one basic test written in the client, which you can run by performing
-`cd client` and then `yarn test`. If you want to add new client tests you can use Jest.
+## How to run
 
-Mocha has been installed on the server to allow you to create server tests if you wish,
-although none have been written yet.
+1. Install dependencies by running `yarn install`.
+2. Run `yarn start` to start both, the API and the Client.
+3. Look at your browser.
+4. That's it! :)
 
-## The challenge
+## How to test
 
-Create a web-app that shows how much you can expect to make from your savings over time.
+-   Run `yarn test` from the root directory to run all tests (back-end + front-end)
 
-The app must satisfy the following Acceptance Criteria (ACs):
+_Note:_ You can also run `yarn test-client` or `yarn test-server` to only run tests for a specific side of the application. Running `cd client && yarn test` will run all front-end tests in watch mode.
 
-* It should allow the user to vary the initial savings amount, monthly deposit and interest rate through the UI
-* It should display how much the user's initial savings amount will be worth over the next 50 years. This should assume that the monthly amount is paid in each month, and the value rises with the interest rate supplied. There are resources online about calculating compound interest totals - e.g. [Wikipedia](https://en.wikipedia.org/wiki/Compound_interest#Investing:_monthly_deposits)
-* All calculations must take place server-side, and all monthly projection data should be returned via an endpoint
-* The calculations must be triggered onChange of any input, to give live feedback on the input data. The performance (try the slider) should be reasonable.
+## Deployment
 
-### Our Guidance
+-   This application can be easily deployed to AWS by running `yarn deploy`. This will bundle the whole app (server + client) using webpack and upload it to a [lambda function](https://aws.amazon.com/lambda/). If everything goes as expected, the command will end by outputting logs with a live endpoint where the App can be accessed!
 
-The challenge should not take any more than 2-4 hours. You do not need to complete the challenge in one go.
+NOTE: To run `yarn deploy`, you will need to create an [AWS account](https://portal.aws.amazon.com/billing/signup#/start) (if you don't have one already) and setup an [AWS profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) named `playground`.
 
-These are some qualities we value:
- * Well-modularised, robust and clearly-written code
- * Maintainability. Another team member should be able to easily work with your code after you've finished.
- * Single Responsibility Principle
- * A well-organised codebase
+# THE END RESULT
 
-An outline UI has been provided, as well as an example endpoint on the server. How you connect these and structure logic is up to you! Feel free to make changes to any of the code provided (including the UI) if you wish.
+If all goes well you should be able to have a working app that looks like this:
 
-We have chosen to include a basic design system on the client, to give you an idea of how we like to build UIs. For this challenge we have used [Chakra JS](https://chakra-ui.com/docs/getting-started). If you're not familiar with such systems, hopefully this won't be too steep a learning curve. The docs will give you details of all the components/props you can use, but as a head-start, you can pass in styling props to the components including margins/padding etc like this:
+![working app](./readme_demos/end_result.gif)
 
+## client features
+
+#### User input is debounced when it changes too quickly
+
+![debounce demo](./readme_demos/debounce.gif)
+
+#### User input is validated before requests are sent
+
+![input validation demo](./readme_demos/input_validation.gif)
+
+#### Loading state for slow connections
+
+![loading demo](./readme_demos/loading.gif)
+
+#### Handles errors and tells the user what's going on
+
+![error handling demo](./readme_demos/error.gif)
+
+## server features
+
+#### Fully fledged `getProjections/` rpc endpoint:
+
+-   Spec
+    | query param | required | type | default | must be |
+    |:---------------:|:--------:|:-------:|:-------:|:-----------------:|
+    | initial_savings | yes | number | - | >= 0 |
+    | monthly_deposit | yes | number | - | >= 0 |
+    | start_year | no | integer | 0 | >= 0 |
+    | end_year | no | integer | 50 | >= start_year |
+    | start_interest | no | integer | 0 | >= 0 |
+    | end_interest | no | integer | 15 | >= start_interest |
+
+-   Response type:
+
+```typescript
+{
+    projections?: {
+        [interestRatePercentage: number]: {
+            [year: number]: number
+        }
+    }
+    errors?: {
+        value: string,
+        msg: string,
+        param: string,
+        location: string,
+    }[]
+}
 ```
-// This produces a Box (styled div) with a top margin of 2, padding of 3 and a black background colour.
-// Colours and spacing properties are defined in `themes/index.tsx`
-<Box mt={2} p={3} bg='black'>
+
+-   Example 1 - valid response
+
+```typescript
+const query =
+    '/getProjections?initial_savings=1000&monthly_deposit=100&start_year=0&end_year=1&start_interest=0&end_interest=2'
+
+const response = {
+    projections: {
+        0: {
+            0: 1000,
+            1: 2200,
+        },
+        1: {
+            0: 1000,
+            1: 2215.5612673489027,
+        },
+        2: {
+            0: 1000,
+            1: 2231.245696571609,
+        },
+    },
+}
 ```
 
-Although the API might be relatively straightforward, please try and write the API code as if you were building something more complex. We would like to gain an idea of how you would go about structuring API code.
+-   Example 2 - invalid request
 
-Other than that, feel free to take the challenge in any directions you feel best showcase your strengths!
+```typescript
+const query = '/getProjections?initial_savings=1000&monthly_deposit=100&start_year=0.4'
 
-Once complete, please drop us a brief note (either an email, or in the readme somewhere) explaining:
-* How you approached the challenge
-* What bits of your solution you like
-* What bits of your solution you’d like to improve upon
+const response = {
+    errors: [
+        {
+            value: '0.4',
+            msg: 'must be an integer',
+            param: 'start_year',
+            location: 'query',
+        },
+    ],
+}
+```
 
-Any images/gifs of the finished product would be helpful too!
+#### CREDITS
 
-### Tooling
+-   [Finimize](https://www.finimize.com/)
+-   [Create React App](https://create-react-app.dev/)
+-   [Serverless Framework](https://www.serverless.com/)
 
-The frontend contains some tooling you might be familiar with
-
-#### Typescript
-
-If you like to use Typescript in your workflow, you should get any warnings/errors appear in your terminal after running `yarn start`.
-
-We believe strong TS typing will make your code much more robust.
-
-#### Prettier
-
-We believe Prettier makes your life easier! There is an example .prettierrc included in the `frontend` directory - feel free to tweak the settings if you'd prefer.
-
-You might need to give your IDE a nudge to pick the settings up - [here's an example](https://stackoverflow.com/a/58669550/4388938) of how to do that with VS Code
-
+Thanks for reading!
