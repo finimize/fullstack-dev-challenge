@@ -16,11 +16,11 @@ const addDefaultQueryValues: GetRequestHandler = (req, _, next) => {
 
 export const QUERY_VALIDATORS: GetRequestHandler[] = [
     addDefaultQueryValues,
-    query('initial_savings', 'is required').exists(),
+    query('initial_savings', 'is required').isNumeric().exists(),
     query('initial_savings', 'must be a numeric value greater than or equal to zero')
         .custom((value) => Number(value) >= 0)
         .toFloat(),
-    query('monthly_deposit', 'is required').exists(),
+    query('monthly_deposit', 'is required').isNumeric().exists(),
     query('monthly_deposit', 'must be a numeric value greater than or equal to zero')
         .custom((value) => Number(value) >= 0)
         .toFloat(),

@@ -7,7 +7,8 @@ import LineChart from '../../components/LineChart'
 import theme from '../../theme'
 import { GetProjectionsResponseData } from '../../api'
 
-import { Savings, INITIAL_FORM_VALUES } from './Savings'
+import { Savings } from './Savings'
+import { INITIAL_FORM_VALUES } from './form'
 
 const defaultTheme = extendTheme(theme)
 

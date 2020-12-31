@@ -6,40 +6,16 @@ import LineChart from '../../components/LineChart'
 import DefaultLayout from '../../components/layouts/Default'
 import { NumberInput } from '../../components/NumberInput'
 import { useFetchProjections } from '../../api'
-import { getFormValidator, isGTE, useFormValues } from '../../form'
+import { useFormValues } from '../../form'
 import { useDebouncedFn } from '../../utils'
 
-export const INITIAL_FORM_VALUES = {
-    initialSavingsAmount: '50000',
-    monthlyDeposit: '100',
-}
-const INITIAL_INTEREST_RATE = 2
-const YEAR_RANGE_TO_FETCH = [0, 50] as [number, number]
-
-type FormValues = typeof INITIAL_FORM_VALUES
-
-const FORM_VALIDATORS = getFormValidator({
-    initialSavingsAmount: [
-        {
-            message: 'Initial savings amount should be equal or greater than zero',
-            condition: (val) => !isGTE(val, 0),
-        },
-        {
-            message: 'Initial savings amount too big',
-            condition: (val) => !Number.isSafeInteger(Number(val)),
-        },
-    ],
-    monthlyDeposit: [
-        {
-            message: 'Monthly deposit amount should be equal or greater than zero',
-            condition: (val) => !isGTE(val, 0),
-        },
-        {
-            message: 'Monthly deposit amount too big',
-            condition: (val) => !Number.isSafeInteger(Number(val)),
-        },
-    ],
-})
+import {
+    INITIAL_FORM_VALUES,
+    INITIAL_INTEREST_RATE,
+    YEAR_RANGE_TO_FETCH,
+    FORM_VALIDATORS,
+    FormValues,
+} from './form'
 
 export const Savings = () => {
     const [interestRatePercentage, setInterestRatePercentage] = useState(INITIAL_INTEREST_RATE)
