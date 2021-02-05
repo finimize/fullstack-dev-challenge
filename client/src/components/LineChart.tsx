@@ -1,4 +1,4 @@
-import { ChartOptions } from 'chart.js'
+import { ChartLegendOptions, ChartOptions } from 'chart.js'
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 import theme from '../theme'
@@ -12,7 +12,7 @@ type Props = {
 }
 
 const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
-    const legendOptions = {
+    const legendOptions: ChartLegendOptions = {
         display: false,
     }
 
