@@ -1,3 +1,4 @@
+import { ChartOptions } from 'chart.js'
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 import theme from '../theme'
@@ -15,23 +16,24 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
         display: false,
     }
 
-    const options = {
+    const options: ChartOptions = {
         title: {
             display: !!title,
             text: title,
         },
         scales: {
-            gridlines: { display: false },
+            gridLines: { display: false },
             yAxes: [
                 {
                     scaleLabel: { display: !!yLabel, labelString: yLabel },
-                    gridlines: { display: false },
+                    gridLines: { display: false },
                 },
             ],
             xAxes: [
                 {
                     scaleLabel: { display: !!xLabel, labelString: xLabel },
                     ticks: { display: true },
+                    gridLines: { display: false },
                 },
             ],
         },
