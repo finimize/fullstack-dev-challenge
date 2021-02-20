@@ -19,7 +19,7 @@ function App() {
     return (
         <ChakraProvider theme={defaultTheme}>
             {/* We've just bundled everything into one file here to 
-            get you started - please don't take this as best practice! */}
+            get you started!*/}
             <DefaultLayout>
                 <Container pt={6}>
                     <LineChart
