@@ -35,11 +35,11 @@ The challenge should not take any more than 2-4 hours. You do not need to comple
 
 These are some qualities we value:
  * Well-modularised, robust and clearly-written code
- * Maintainability. Another team member should be able to easily work with your code after you've finished.
+ * Maintainability. Another team member should be able to easily work with your code after you've finished. 
  * Single Responsibility Principle
- * A well-organised codebase
+ * A well-organised codebase. You should think about how your codebase might grow as the project becomes more complex
 
-An outline UI has been provided, as well as an example endpoint on the server. How you connect these and structure logic is up to you! Feel free to make changes to any of the code provided (including the UI) if you wish.
+The UI has been started, as well as an example endpoint on the server. How you connect these and structure logic is up to you! Feel free to make changes to any of the code provided (including the UI) if you wish.
 
 We have chosen to include a basic design system on the client, to give you an idea of how we like to build UIs. For this challenge we have used [Chakra JS](https://chakra-ui.com/docs/getting-started). If you're not familiar with such systems, hopefully this won't be too steep a learning curve. The docs will give you details of all the components/props you can use, but as a head-start, you can pass in styling props to the components including margins/padding etc like this:
 
