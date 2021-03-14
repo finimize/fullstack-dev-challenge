@@ -3,6 +3,6 @@ import { getCompoundInterest } from '../handlers/interestHandler'
 
 const router = express.Router()
 
-router.get('/compound', getCompoundInterest)
+router.post('/compound', getCompoundInterest)
 
 export default router

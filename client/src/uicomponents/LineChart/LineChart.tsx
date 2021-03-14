@@ -1,7 +1,7 @@
 import { ChartLegendOptions, ChartOptions } from 'chart.js'
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-import theme from '../theme'
+import theme from '../../theme'
 
 type Props = {
     xAxisData: number[] | string[]
@@ -26,14 +26,14 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
             yAxes: [
                 {
                     scaleLabel: { display: !!yLabel, labelString: yLabel },
-                    gridLines: { display: false },
+                    gridLines: { display: true },
                 },
             ],
             xAxes: [
                 {
                     scaleLabel: { display: !!xLabel, labelString: xLabel },
                     ticks: { display: true },
-                    gridLines: { display: false },
+                    gridLines: { display: true },
                 },
             ],
         },

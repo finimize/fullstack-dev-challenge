@@ -1,5 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import cors from 'cors'
 
 import interestRoutes from './routes/interest'
 
@@ -9,6 +10,7 @@ app.set("port", process.env.PORT || 3001)
 
 app.use(bodyParser.json())
 
+app.use(cors())
 
 app.use('/interest', interestRoutes)
 

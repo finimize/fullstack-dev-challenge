@@ -8,9 +8,9 @@ export interface IProjection {
 }
 
 export interface IProjectionRequest {
-  principal: Number
-  monthlyDeposit: Number
-  interestRate: Number
+  principal: number
+  monthlyDeposit: number
+  interestRate: number
 }
 
 export interface IProjectionResponse {
