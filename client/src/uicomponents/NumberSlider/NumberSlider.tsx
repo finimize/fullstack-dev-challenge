@@ -7,9 +7,10 @@ type Props = {
   min?: number;
   max?: number;
   maxSlider?: number;
+  step?: number;
 }
 
-const NumberSlider = ({ value, onChange, min, max, maxSlider }: Props) => {
+const NumberSlider = ({ value, onChange, min, max, maxSlider, step }: Props) => {
   const [temp, setTemp] = useState<number>(value)
   const [isEditing, setEditing] = useState<boolean>(false)
 
@@ -18,7 +19,7 @@ const NumberSlider = ({ value, onChange, min, max, maxSlider }: Props) => {
   }, [value])
 
   useEffect(() => {
-    if (!isEditing && temp) {
+    if (!isEditing && temp && (max || maxSlider || 100) >= temp ) {
       onChange(temp)
     }
   }, [temp, isEditing, onChange])
@@ -30,8 +31,8 @@ const NumberSlider = ({ value, onChange, min, max, maxSlider }: Props) => {
         min={min}
         max={max}
         value={temp} 
-        onChange={(value, valueAsNumber) => {
-          setTemp(valueAsNumber)
+        onChange={(value, valueAsNumber = 0) => {
+          setTemp(valueAsNumber || 0)
         }}>
         <NumberInputField />
       </NumberInput>
@@ -43,9 +44,11 @@ const NumberSlider = ({ value, onChange, min, max, maxSlider }: Props) => {
         min={min} 
         max={maxSlider} 
         value={temp}
+        step={step}
         onChangeEnd={() => setEditing(false)}
         onChange={setTemp}
         onChangeStart={() => setEditing(true)}
+        focusThumbOnChange={false}
       >
         <SliderTrack h={2}>
           <SliderFilledTrack />

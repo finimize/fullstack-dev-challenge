@@ -21,9 +21,9 @@ const CIInfo = ({ projections }: Props) => {
         Your Savings Details
       </Box>
       <Flex direction="column" align="flex-start" justify="space-around" h="100%" m={-4} mt={0}>
-        <CIInfoSection title="Total Deposits" amount={`£${totalDeposit}`} borderBottom="1px "/>
-        <CIInfoSection title="Total Interest Paid" amount={`£${totalInterest}`} />
-        <CIInfoSection title="Your Balance" amount={`£${balance}`} />
+        <CIInfoSection title="Total Deposits" amount={totalDeposit} borderBottom="1px "/>
+        <CIInfoSection title="Total Interest Paid" amount={totalInterest} />
+        <CIInfoSection title="Your Balance" amount={balance} />
       </Flex>
     </Flex>
   )

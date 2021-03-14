@@ -1,4 +1,4 @@
-import { VStack, FormControl, FormLabel, Input, Slider, SliderTrack, SliderFilledTrack, SliderThumb, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper } from '@chakra-ui/react'
+import { VStack, FormControl, FormLabel } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { IProjectionRequest } from '../../api/compoundInterest/calculateProjection'
 import NumberSlider from '../../uicomponents/NumberSlider'
@@ -31,7 +31,7 @@ const CIInputFrom = ({ onChange }: Props) => {
 
       <FormControl id="interest">
         <FormLabel fontSize="sm">Interest Rate</FormLabel>
-        <NumberSlider value={interestRate} onChange={setInterestRate} max={100} maxSlider={20}/>
+        <NumberSlider value={interestRate} onChange={setInterestRate} max={20} maxSlider={20} step={0.01}/>
       </FormControl>
 
       <FormControl id="monthlyDeposit">
