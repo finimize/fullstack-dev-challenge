@@ -2,8 +2,10 @@ import { Box, BoxProps, Text } from '@chakra-ui/react'
 import React from 'react'
 import theme from '../../theme'
 
+const Currency = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' })
+
 interface Props extends BoxProps {
-  amount: String
+  amount: number
 }
 
 const CIInfoSection = ({ title, amount, ...props }: Props) => {
@@ -13,7 +15,7 @@ const CIInfoSection = ({ title, amount, ...props }: Props) => {
         <Text fontSize="sm">{title}</Text>
       </Box>
       <Box>
-        <Text fontSize="31px" fontWeight="bold">{amount}</Text>
+        <Text fontSize="31px" fontWeight="bold">{Currency.format(amount)}</Text>
       </Box>
     </Box>
   )
