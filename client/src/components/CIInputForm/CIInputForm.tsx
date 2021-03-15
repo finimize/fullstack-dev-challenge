@@ -36,7 +36,7 @@ const CIInputFrom = ({ onChange }: Props) => {
 
       <FormControl id="monthlyDeposit">
         <FormLabel fontSize="sm">Monthly deposit</FormLabel>
-        <NumberSlider value={monthlyDeposit} onChange={setMonthlyDeposit} max={1000000} maxSlider={10000}/>
+        <NumberSlider value={monthlyDeposit} onChange={setMonthlyDeposit} max={10000} maxSlider={10000}/>
       </FormControl>
     </VStack>
   )

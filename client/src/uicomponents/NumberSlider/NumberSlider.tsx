@@ -22,7 +22,7 @@ const NumberSlider = ({ value, onChange, min, max, maxSlider, step }: Props) => 
     if (!isEditing && temp && (max || maxSlider || 100) >= temp ) {
       onChange(temp)
     }
-  }, [temp, isEditing, onChange])
+  }, [temp, isEditing, onChange, max, maxSlider])
 
   return (
     <Box>

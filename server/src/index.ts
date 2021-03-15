@@ -3,6 +3,7 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 
 import interestRoutes from './routes/interest'
+import error from './middlewares/error'
 
 const app = express()
 
@@ -13,6 +14,8 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.use('/interest', interestRoutes)
+
+app.use(error())
 
 // Express only serves static assets in production
 if (process.env.NODE_ENV === "production") {
