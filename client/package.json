@@ -28,12 +28,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -47,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@types/chart.js": "^2.9.30"
+    "@types/chart.js": "^2.9.30",
+    "jest-canvas-mock": "^2.3.1"
   }
 }

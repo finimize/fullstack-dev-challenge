@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders learn react link 1`] = `
+<div>
+  <div
+    class="css-1c4hsg8"
+  >
+    <img
+      alt="Finimize"
+      class="chakra-image__placeholder css-u4ybgy"
+    />
+  </div>
+</div>
+`;

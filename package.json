@@ -9,16 +9,43 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "ts-node server.ts",
     "types": "tsc",
+    "test-client": "node scripts/test-client.js",
     "client": "node scripts/start-client.js",
-    "install": "cd client && yarn install && cd .."
+    "install": "cd client && yarn install && cd ..",
+    "lint": "yarn lint-css && yarn lint-code --max-warnings 0 && yarn lint-style -c",
+    "lint-css": "stylelint 'client/src/**/*.{js,ts,tsx}'",
+    "lint-code": "eslint 'client/src/**/*.{js,ts,tsx}'",
+    "lint-style": "yarn prettier 'client/src/**/*.{js,ts,tsx,json,md,yml}'"
   },
   "devDependencies": {
     "@types/cors": "^2.8.9",
     "@types/express": "^4.17.9",
     "@types/node": "^14.14.14",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
     "concurrently": "5.3.0",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-ts": "^0.4.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4",
     "mocha": "^8.2.1",
+    "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
+  },
+  "lint-staged": {
+    "./client/**/*.{ts,tsx,js,jsx}": [
+      "eslint --fix --max-warnings 0",
+      "prettier --write",
+      "git add"
+    ],
+    "./client/**/*.{json,md,yml}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

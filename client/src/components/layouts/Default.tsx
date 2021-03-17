@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
-import NavHeader from '../NavHeader'
+import { NavHeader } from '../NavHeader'
 
 type LayoutProps = {
     children: React.ReactNode
