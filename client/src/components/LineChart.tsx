@@ -1,7 +1,7 @@
 import { ChartLegendOptions, ChartOptions } from 'chart.js'
-import React from 'react'
+import React, { FC } from 'react'
 import { Line } from 'react-chartjs-2'
-import theme from '../theme'
+import { theme } from '../theme'
 
 type Props = {
     xAxisData: number[] | string[]
@@ -11,7 +11,7 @@ type Props = {
     yLabel?: string
 }
 
-const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
+export const LineChart: FC = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
     const legendOptions: ChartLegendOptions = {
         display: false,
     }
@@ -56,5 +56,3 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
         />
     )
 }
-
-export default LineChart

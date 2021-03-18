@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Box, Image } from '@chakra-ui/react'
-import images from '../../images'
+import { images } from '../../images'
 
-export const NavHeader = () => (
+export const NavHeader: FC = () => (
     <Box
-        display="flex"
-        flexDirection="row"
-        justifyContent="space-between"
+        display='flex'
+        flexDirection='row'
+        justifyContent='space-between'
         px={6}
         py={4}
-        bg="blueHeader"
+        bg='blueHeader'
     >
-        <Image src={images.fullBrandLogo} alt="Finimize" width="160px" />
+        <Image src={images.fullBrandLogo} alt='Finimize' width='160px' />
     </Box>
 )

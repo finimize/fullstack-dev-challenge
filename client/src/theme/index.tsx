@@ -1,4 +1,4 @@
-const theme = {
+export const theme = {
     colors: {
         transparent: 'transparent',
         white: '#fff',
@@ -79,5 +79,3 @@ const theme = {
         96: '24rem',
     },
 }
-
-export default theme

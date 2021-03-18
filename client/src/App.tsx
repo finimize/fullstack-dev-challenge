@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 import './App.css'
 import { ChakraProvider, extendTheme, Container } from '@chakra-ui/react'
-import DefaultLayout from './components/layouts/Default'
-import LineChart from './components/LineChart'
-import theme from './theme'
+import { DefaultLayout } from './components/layouts/Default'
+import { LineChart } from './components/LineChart'
+import { theme } from './theme'
 
 const defaultTheme = extendTheme(theme)
 
@@ -14,20 +14,18 @@ const tempData = {
     yAxis: [100, 150, 180, 210, 240, 350],
 }
 
-export const App = () => {
-    return (
-        <ChakraProvider theme={defaultTheme}>
-            <DefaultLayout>
-                <Container pt={6}>
-                    <LineChart
-                        title="Savings Over time"
-                        xAxisData={tempData.xAxis}
-                        yAxisData={tempData.yAxis}
-                        xLabel="Years"
-                        yLabel="Amount"
-                    />
-                </Container>
-            </DefaultLayout>
-        </ChakraProvider>
-    )
-}
+export const App: FC = () => (
+    <ChakraProvider theme={defaultTheme}>
+        <DefaultLayout>
+            <Container pt={6}>
+                <LineChart
+                    title='Savings Over time'
+                    xAxisData={tempData.xAxis}
+                    yAxisData={tempData.yAxis}
+                    xLabel='Years'
+                    yLabel='Amount'
+                />
+            </Container>
+        </DefaultLayout>
+    </ChakraProvider>
+)
