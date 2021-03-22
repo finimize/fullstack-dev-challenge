@@ -1,5 +1,5 @@
 module.exports = () => {
-  const tsconfigPath = "../../client/tsconfig.json";
+  const tsconfigPath = ["../../client/tsconfig.json", "../../tsconfig.json"];
   return {
     files: ["*.ts", "*.tsx"],
     extends: [
