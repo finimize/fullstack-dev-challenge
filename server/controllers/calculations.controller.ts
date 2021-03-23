@@ -28,7 +28,8 @@ export const postCalculations: postCalculationsInterface = (req, res, next) => {
                 currentSavings
             ]
         }
-        res.status(200).send({yearlySavings})
+        console.log(yearlySavings)
+        return res.status(200).send({yearlySavings})
 
     } catch (err) {
     next(err);

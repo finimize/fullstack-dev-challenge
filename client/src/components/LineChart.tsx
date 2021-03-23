@@ -11,7 +11,7 @@ type Props = {
     yLabel?: string
 }
 
-export const LineChart: FC = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
+export const LineChart: FC<Props> = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
     const legendOptions: ChartLegendOptions = {
         display: false,
     }

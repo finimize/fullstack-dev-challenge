@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "scripts": {
@@ -29,7 +30,7 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-import-resolver-ts": "^0.4.2",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react": "^7.23.0",
     "husky": "=4",
     "lint-staged": "^10.5.4",
     "mocha": "^8.2.1",

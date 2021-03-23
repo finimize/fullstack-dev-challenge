@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import './App.css'
 import { ChakraProvider, extendTheme, Container } from '@chakra-ui/react'
 import { DefaultLayout } from './components/layouts/Default'
@@ -14,18 +14,40 @@ const tempData = {
     yAxis: [100, 150, 180, 210, 240, 350],
 }
 
-export const App: FC = () => (
-    <ChakraProvider theme={defaultTheme}>
-        <DefaultLayout>
-            <Container pt={6}>
-                <LineChart
-                    title='Savings Over time'
-                    xAxisData={tempData.xAxis}
-                    yAxisData={tempData.yAxis}
-                    xLabel='Years'
-                    yLabel='Amount'
-                />
-            </Container>
-        </DefaultLayout>
-    </ChakraProvider>
-)
+export const App: FC = () => {
+    const postCalculation = async () => {
+        const response = await fetch('http://localhost:3001/api', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                initialSavings: 500,
+                interestRate: 0.2,
+            }),
+        })
+        return response.json()
+    }
+
+    useEffect(() => {
+        postCalculation()
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err))
+    }, [])
+    return (
+        <ChakraProvider theme={defaultTheme}>
+            <DefaultLayout>
+                <Container pt={6}>
+                    <LineChart
+                        title='Savings Over time'
+                        xAxisData={tempData.xAxis}
+                        yAxisData={tempData.yAxis}
+                        xLabel='Years'
+                        yLabel='Amount'
+                    />
+                </Container>
+            </DefaultLayout>
+        </ChakraProvider>
+    )
+}

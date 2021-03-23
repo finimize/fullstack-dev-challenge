@@ -1,9 +1,9 @@
 import express from 'express';
-import calculations from './calculations.route';
+import {router as calculationRoute} from './calculations.route';
 
 const routes = express.Router();
 
-routes.use('/', calculations);
+routes.use('/', calculationRoute);
 
 export {
     routes
