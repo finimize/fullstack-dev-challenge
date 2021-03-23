@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { FC, useEffect } from 'react'
 import './App.css'
 import { ChakraProvider, extendTheme, Container } from '@chakra-ui/react'
@@ -25,6 +26,8 @@ export const App: FC = () => {
             body: JSON.stringify({
                 initialSavings: 500,
                 interestRate: 0.2,
+                compoundingFrequency: 4,
+                monthlyContributions: 100,
             }),
         })
         return response.json()

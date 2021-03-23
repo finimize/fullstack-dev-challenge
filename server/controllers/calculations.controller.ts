@@ -1,37 +1,59 @@
 import { Request, Response, NextFunction } from 'express';
 
-interface calculationsBodyinterface {
+interface CalculationsBodyInterface {
     initialSavings: number
     interestRate: number
+    compoundingFrequency: number,
+    monthlyContributions?: number
 }
 
-interface postCalculationsInterface {
-(req: Request<unknown, unknown, calculationsBodyinterface>,
+interface PostCalculationsInterface {
+(req: Request<unknown, unknown, CalculationsBodyInterface>,
 res: Response,
 next: NextFunction) : void 
 }
 
-export const postCalculations: postCalculationsInterface = (req, res, next) => {
+
+const calculateInterestRate = (interestRate: number, compoundingFrequency: number) => (1 + (interestRate/compoundingFrequency)) 
+const totalSavingsWithoutInterest = (currentSavings: number, monthlyContributions: number) => currentSavings + monthlyContributions;
+const totalSavingsWithInterest = ( 
+    currentSavings: number, 
+    monthlyContributions: number, 
+    interestRate: number, 
+    compoundingFrequency: number 
+    ) => totalSavingsWithoutInterest(currentSavings, monthlyContributions) * calculateInterestRate(interestRate, compoundingFrequency);
+
+export const postCalculations: PostCalculationsInterface = (req, res, next) => {
     try {
         const {
             initialSavings,
-            interestRate
+            interestRate,
+            compoundingFrequency,
+            monthlyContributions=0
         } = req.body;
 
         let currentSavings = initialSavings;
-        let yearlySavings: number[] = [currentSavings]
+        let yearlySavings: number[][] = [[currentSavings]]
 
-        for (let year = 1; year <= 50; year+=1 ){
-            currentSavings *= (1 + interestRate)
+        for (let year = 1; year <= 3; year+=1 ){
+            let currentYearSavings: number[] = [];
+            for (let month = 1; month <= 12; month+=1) {
+                currentSavings = month % (12/compoundingFrequency) === 0 
+                ? totalSavingsWithInterest(currentSavings, monthlyContributions, interestRate, compoundingFrequency) 
+                : totalSavingsWithoutInterest(currentSavings, monthlyContributions)
+                currentYearSavings = [
+                    ...currentYearSavings,
+                    currentSavings
+                ]
+            }
             yearlySavings = [
                 ...yearlySavings,
-                currentSavings
+                currentYearSavings
             ]
         }
-        console.log(yearlySavings)
         return res.status(200).send({yearlySavings})
 
     } catch (err) {
-    next(err);
+    return next(err);
   }
 }
