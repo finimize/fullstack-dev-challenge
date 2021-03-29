@@ -1,0 +1,1 @@
+export const UPDATE_DETAILS = 'UPDATE_DETAILS'
