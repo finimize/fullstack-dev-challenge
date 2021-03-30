@@ -5,7 +5,6 @@ import { ChakraProvider, extendTheme, Container } from '@chakra-ui/react'
 import { AppProvider } from './store'
 import { DefaultLayout } from './components/layouts/Default'
 import { LineChart } from './components/LineChart'
-import { Details } from './components/Details'
 import { theme } from './theme'
 
 const defaultTheme = extendTheme(theme)
@@ -18,15 +17,6 @@ const tempData = {
 }
 
 export const App: FC = () => {
-    // const initialState = {
-    //     currentPage: 1,
-
-    // }
-    // const [pageDetails, setPageDetails] = useState({
-    //     currentPage: 1,
-
-    // })
-
     const postCalculation = async () => {
         const response = await fetch('http://localhost:3001/api', {
             method: 'POST',
@@ -49,24 +39,11 @@ export const App: FC = () => {
             .then((data) => console.log(data))
             .catch((err) => console.log(err))
     }, [])
+
     return (
         <AppProvider>
             <ChakraProvider theme={defaultTheme}>
-                <DefaultLayout>
-                    <Details />
-                    {/* <Card> */}
-                    {/* <Input label="First Name" error="hello"/>
-                    <Container pt={6}>
-                        <LineChart
-                            title='Savings Over time'
-                            xAxisData={tempData.xAxis}
-                            yAxisData={tempData.yAxis}
-                            xLabel='Years'
-                            yLabel='Amount'
-                        />
-                    </Container> */}
-                    {/* </Card> */}
-                </DefaultLayout>
+                <DefaultLayout />
             </ChakraProvider>
         </AppProvider>
     )

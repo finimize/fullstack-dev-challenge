@@ -20,4 +20,6 @@ export const initialState: StateInterface = {
         error: '',
         isLoading: false,
     },
+    calculatorMode: 'Simple',
+    currentPage: 1,
 }

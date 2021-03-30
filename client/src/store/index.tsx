@@ -1,11 +1,25 @@
 import React, { createContext, useReducer, FC } from 'react'
 import { initialState } from './initialState'
 import { reducer } from './reducer'
-import { UpdateDetailsTypeInterface, StateInterface, AppProps } from './store.interface'
+import {
+    UpdateDetailsTypeInterface,
+    ValidateDetailsTypeInterface,
+    NextPageTypeInterface,
+    StateInterface,
+    AppProps,
+    PreviousPageTypeInterface,
+    ToggleModeInterface,
+} from './store.interface'
 
 const AppContext = createContext<{
     state: StateInterface
-    dispatch: React.Dispatch<UpdateDetailsTypeInterface>
+    dispatch: React.Dispatch<
+        | UpdateDetailsTypeInterface
+        | ValidateDetailsTypeInterface
+        | NextPageTypeInterface
+        | ToggleModeInterface
+        | PreviousPageTypeInterface
+    >
 }>({
     state: initialState,
     dispatch: () => null,

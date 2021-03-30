@@ -1,1 +1,5 @@
 export const UPDATE_DETAILS = 'UPDATE_DETAILS'
+export const VALIDATE_DETAILS = 'VALIDATE_DETAILS'
+export const NEXT_PAGE = 'NEXT_PAGE'
+export const PREVIOUS_PAGE = 'PREVIOUS_PAGE'
+export const TOGGLE_MODE = 'TOGGLE_MODE'

@@ -1,9 +1,11 @@
 import React, { FC, useContext } from 'react'
-import { Box, Text, Grid, Button } from '@chakra-ui/react'
+import { Box, Text, Grid } from '@chakra-ui/react'
 import { AppContext } from '../../store'
-import { UPDATE_DETAILS } from '../../store/types'
+import { UPDATE_DETAILS, VALIDATE_DETAILS, NEXT_PAGE } from '../../store/types'
+import { useValidateDetails } from '../Hooks/useValidateDetails'
 import { Card } from '../Card'
 import { Input } from '../Input'
+import { PageControls } from '../PageControls'
 
 // type DetailsProps = {
 //     // children: React.ReactNode
@@ -11,18 +13,43 @@ import { Input } from '../Input'
 
 export const Details: FC = () => {
     const { state, dispatch } = useContext(AppContext)
+    const validationData = useValidateDetails()
+
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement>,
         field: 'firstName' | 'lastName' | 'email',
-    ) =>
-        dispatch({
+    ) => {
+        const validateNonEmpty = (str: string): string =>
+            str.length === 0 || !str.trim() ? 'Please enter a value' : ''
+        const error = state.details[field].error && validateNonEmpty(e.target.value)
+        return dispatch({
             type: UPDATE_DETAILS,
             field,
             payload: {
                 value: e.target.value,
-                error: '',
+                error,
             },
         })
+    }
+
+    //     const validateNonEmpty = (str: string):string => str.length === 0 || !str.trim() ? 'Please enter a value': ''
+    //     const validateEmail = (email: string) => {
+    //     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     return re.test(email.toLowerCase()) ? '': 'Add a valid email';
+    // }
+
+    const nextPage = () =>
+        validationData.valid
+            ? dispatch({ type: NEXT_PAGE })
+            : dispatch({
+                  type: VALIDATE_DETAILS,
+                  payload: {
+                      firstName: validationData.error.firstName,
+                      lastName: validationData.error.lastName,
+                      email: validationData.error.email,
+                  },
+              })
+
     return (
         <Box>
             <Card>
@@ -38,17 +65,24 @@ export const Details: FC = () => {
                     <Input
                         label='First Name'
                         value={state.details.firstName.value}
+                        error={state.details.firstName.error}
                         onChange={(e) => handleChange(e, 'firstName')}
                     />
-                    <Input label='Last Name' />
-                    <Input label='Email' />
+                    <Input
+                        label='Last Name'
+                        value={state.details.lastName.value}
+                        error={state.details.lastName.error}
+                        onChange={(e) => handleChange(e, 'lastName')}
+                    />
+                    <Input
+                        label='Email'
+                        value={state.details.email.value}
+                        error={state.details.email.error}
+                        onChange={(e) => handleChange(e, 'email')}
+                    />
                 </Grid>
             </Card>
-            <Box justifyContent='flex-end' display='flex' padding='8'>
-                <Button backgroundColor='primary' color='white'>
-                    Next Page
-                </Button>
-            </Box>
+            <PageControls prevPage={() => null} nextPage={nextPage} />
         </Box>
     )
 }

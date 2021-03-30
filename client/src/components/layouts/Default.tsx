@@ -1,23 +1,31 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import { Box } from '@chakra-ui/react'
 import { NavHeader } from '../NavHeader'
 import { StepButton } from '../StepButton'
 import { Header } from '../Header'
+import { Details } from '../Details'
+import { CalculatorMode } from '../CalculatorMode'
+import { AppContext } from '../../store'
 
-type LayoutProps = {
-    children: React.ReactNode
+// type LayoutProps = {
+//     children: React.ReactNode
+// }
+
+export const DefaultLayout: FC = () => {
+    const { state } = useContext(AppContext)
+
+    return (
+        <Box
+            display='flex'
+            minHeight='100vh'
+            height='100%'
+            flexDirection='column'
+            backgroundColor='grey2'
+        >
+            <NavHeader />
+            <Header />
+            {state.currentPage === 1 && <Details />}
+            {state.currentPage === 2 && <CalculatorMode />}
+        </Box>
+    )
 }
-
-export const DefaultLayout: FC<LayoutProps> = ({ children }: LayoutProps) => (
-    <Box
-        display='flex'
-        minHeight='100vh'
-        height='100%'
-        flexDirection='column'
-        backgroundColor='grey2'
-    >
-        <NavHeader />
-        <Header />
-        <>{children}</>
-    </Box>
-)
