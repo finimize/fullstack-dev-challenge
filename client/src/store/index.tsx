@@ -11,6 +11,7 @@ import {
     ToggleModeInterface,
     UpdateCalculationsTypeInterface,
     UpdateInterestRateInterface,
+    UpdateDataInterface,
 } from './store.interface'
 
 const AppContext = createContext<{
@@ -18,6 +19,7 @@ const AppContext = createContext<{
     dispatch: React.Dispatch<
         | UpdateDetailsTypeInterface
         | UpdateCalculationsTypeInterface
+        | UpdateDataInterface
         | ValidateDetailsTypeInterface
         | NextPageTypeInterface
         | ToggleModeInterface

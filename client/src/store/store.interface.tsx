@@ -2,6 +2,7 @@ import {
     UPDATE_DETAILS,
     UPDATE_CALCULATIONS,
     UPDATE_INTEREST,
+    UPDATE_DATA,
     VALIDATE_DETAILS,
     NEXT_PAGE,
     TOGGLE_MODE,
@@ -80,4 +81,9 @@ export type PreviousPageTypeInterface = {
 export type ToggleModeInterface = {
     type: typeof TOGGLE_MODE
     payload: string
+}
+
+export type UpdateDataInterface = {
+    type: typeof UPDATE_DATA
+    payload: number[]
 }

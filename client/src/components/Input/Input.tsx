@@ -42,7 +42,7 @@ export const Input: FC<InputProps> = ({
         type,
     }
     return (
-        <Box padding='2' maxWidth='96' marginBottom='2'>
+        <Box padding='2' maxWidth={isNumberInput ? '72' : '96'} marginBottom='2'>
             <FormLabel fontSize='sm' marginBottom='2' color='grey5' fontWeight='500'>
                 {label}
             </FormLabel>

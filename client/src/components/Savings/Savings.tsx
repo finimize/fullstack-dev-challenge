@@ -1,18 +1,10 @@
 import React, { FC, useContext, useEffect, useState } from 'react'
-import {
-    Box,
-    Text,
-    Grid,
-    Slider,
-    SliderTrack,
-    SliderFilledTrack,
-    SliderThumb,
-    FormLabel,
-} from '@chakra-ui/react'
+import { Box, Text, Grid } from '@chakra-ui/react'
 import { AppContext } from '../../store'
-import { UPDATE_CALCULATIONS, UPDATE_INTEREST } from '../../store/types'
+import { UPDATE_CALCULATIONS, UPDATE_DATA } from '../../store/types'
 import { Card } from '../Card'
 import { Input } from '../Input'
+import { InterestRateSlider } from '../InterestRateSlider'
 import { PageControls } from '../PageControls'
 
 // type DetailsProps = {
@@ -49,11 +41,16 @@ export const Savings: FC = () => {
     useEffect(() => {
         postCalculation(
             Number(calculations.initialSavings.value),
-            0.1,
+            Number(calculations.interestRate),
             1,
             Number(calculations.monthlyContributions.value),
         )
-            .then((data) => console.log(calculations))
+            .then((data: number[]) =>
+                dispatch({
+                    type: UPDATE_DATA,
+                    payload: data,
+                }),
+            )
             .catch((err) => console.log(err))
     }, [
         calculations.interestRate,
@@ -65,7 +62,6 @@ export const Savings: FC = () => {
         const validateNonEmpty = (str: string): string =>
             str.length === 0 || !str.trim() ? 'Please enter a valid Number value' : ''
         const error = validateNonEmpty(e)
-        console.log(e)
         return dispatch({
             type: UPDATE_CALCULATIONS,
             field,
@@ -85,7 +81,7 @@ export const Savings: FC = () => {
                 <Text fontSize='xs' marginBottom='4' color='grey5'>
                     Simply change the values below to see your results
                 </Text>
-                <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2,1fr)' }}>
+                <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2,350px)' }}>
                     <Input
                         label='Initial Deposit'
                         isNumberInput
@@ -100,40 +96,7 @@ export const Savings: FC = () => {
                         error={state.calculations.monthlyContributions.error}
                         onChangeNumber={(e) => handleChange(e, 'monthlyContributions')}
                     />
-                    <Box padding='2' maxWidth='96' marginBottom='2'>
-                        <FormLabel fontSize='sm' marginBottom='2' color='grey5' fontWeight='500'>
-                            Interest Rate
-                        </FormLabel>
-                        <Box display='flex' alignItems='center'>
-                            <Text fontSize='xs' color='grey5'>
-                                0%
-                            </Text>
-                            <Slider
-                                defaultValue={0}
-                                value={calculations.interestRate}
-                                min={0}
-                                max={50}
-                                step={5}
-                                margin={4}
-                                // onChange={setSliderInterestRate}
-                                onChange={(e) =>
-                                    dispatch({
-                                        type: UPDATE_INTEREST,
-                                        payload: Number(e),
-                                    })
-                                }
-                            >
-                                <SliderTrack bg='red.100'>
-                                    <Box position='relative' right={10} />
-                                    <SliderFilledTrack bg='tomato' />
-                                </SliderTrack>
-                                <SliderThumb boxSize={6} />
-                            </Slider>
-                            <Text fontSize='xs' color='grey5'>
-                                50%
-                            </Text>
-                        </Box>
-                    </Box>
+                    <InterestRateSlider />
                 </Grid>
             </Card>
             <PageControls prevPage={() => null} nextPage={() => null} />
