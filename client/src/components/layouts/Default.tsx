@@ -5,6 +5,7 @@ import { StepButton } from '../StepButton'
 import { Header } from '../Header'
 import { Details } from '../Details'
 import { CalculatorMode } from '../CalculatorMode'
+import { Savings } from '../Savings'
 import { AppContext } from '../../store'
 
 // type LayoutProps = {
@@ -26,6 +27,7 @@ export const DefaultLayout: FC = () => {
             <Header />
             {state.currentPage === 1 && <Details />}
             {state.currentPage === 2 && <CalculatorMode />}
+            {state.currentPage === 3 && <Savings />}
         </Box>
     )
 }

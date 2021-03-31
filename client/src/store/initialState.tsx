@@ -20,6 +20,18 @@ export const initialState: StateInterface = {
         error: '',
         isLoading: false,
     },
+    calculations: {
+        initialSavings: {
+            value: '0',
+            error: '',
+        },
+        interestRate: 20,
+        compoundingFrequency: 1,
+        monthlyContributions: {
+            value: '0',
+            error: '',
+        },
+    },
     calculatorMode: 'Simple',
-    currentPage: 1,
+    currentPage: 3,
 }

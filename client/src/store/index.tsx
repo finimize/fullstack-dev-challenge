@@ -9,16 +9,20 @@ import {
     AppProps,
     PreviousPageTypeInterface,
     ToggleModeInterface,
+    UpdateCalculationsTypeInterface,
+    UpdateInterestRateInterface,
 } from './store.interface'
 
 const AppContext = createContext<{
     state: StateInterface
     dispatch: React.Dispatch<
         | UpdateDetailsTypeInterface
+        | UpdateCalculationsTypeInterface
         | ValidateDetailsTypeInterface
         | NextPageTypeInterface
         | ToggleModeInterface
         | PreviousPageTypeInterface
+        | UpdateInterestRateInterface
     >
 }>({
     state: initialState,

@@ -14,7 +14,7 @@ next: NextFunction) : void
 }
 
 
-const calculateInterestRate = (interestRate: number, compoundingFrequency: number) => (1 + (interestRate/compoundingFrequency)) 
+const calculateInterestRate = (interestRate: number, compoundingFrequency: number) => (1 + ((interestRate/100)/compoundingFrequency)) 
 const totalSavingsWithoutInterest = (currentSavings: number, monthlyContributions: number) => currentSavings + monthlyContributions;
 const totalSavingsWithInterest = ( 
     currentSavings: number, 

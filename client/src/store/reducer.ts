@@ -1,7 +1,17 @@
-import { UPDATE_DETAILS, VALIDATE_DETAILS, NEXT_PAGE, TOGGLE_MODE, PREVIOUS_PAGE } from './types'
+import {
+    UPDATE_DETAILS,
+    UPDATE_CALCULATIONS,
+    UPDATE_INTEREST,
+    VALIDATE_DETAILS,
+    NEXT_PAGE,
+    TOGGLE_MODE,
+    PREVIOUS_PAGE,
+} from './types'
 import {
     StateInterface,
     UpdateDetailsTypeInterface,
+    UpdateCalculationsTypeInterface,
+    UpdateInterestRateInterface,
     ValidateDetailsTypeInterface,
     NextPageTypeInterface,
     ToggleModeInterface,
@@ -12,6 +22,8 @@ export const reducer = (
     initialState: StateInterface,
     action:
         | UpdateDetailsTypeInterface
+        | UpdateCalculationsTypeInterface
+        | UpdateInterestRateInterface
         | ValidateDetailsTypeInterface
         | NextPageTypeInterface
         | PreviousPageTypeInterface
@@ -42,6 +54,22 @@ export const reducer = (
                 details: {
                     ...initialState.details,
                     [action.field]: action.payload,
+                },
+            }
+        case UPDATE_CALCULATIONS:
+            return {
+                ...initialState,
+                calculations: {
+                    ...initialState.calculations,
+                    [action.field]: action.payload,
+                },
+            }
+        case UPDATE_INTEREST:
+            return {
+                ...initialState,
+                calculations: {
+                    ...initialState.calculations,
+                    interestRate: action.payload,
                 },
             }
         case VALIDATE_DETAILS:

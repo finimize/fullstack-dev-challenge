@@ -1,4 +1,12 @@
-import { UPDATE_DETAILS, VALIDATE_DETAILS, NEXT_PAGE, TOGGLE_MODE, PREVIOUS_PAGE } from './types'
+import {
+    UPDATE_DETAILS,
+    UPDATE_CALCULATIONS,
+    UPDATE_INTEREST,
+    VALIDATE_DETAILS,
+    NEXT_PAGE,
+    TOGGLE_MODE,
+    PREVIOUS_PAGE,
+} from './types'
 
 export interface TextInputInterface {
     value: string
@@ -17,11 +25,19 @@ interface DataInterface {
     isLoading: boolean
 }
 
+export interface CalculationsInterface {
+    initialSavings: TextInputInterface
+    interestRate: number
+    compoundingFrequency: number
+    monthlyContributions: TextInputInterface
+}
+
 export interface StateInterface {
     details: DetailsInterface
     data: DataInterface
     currentPage: number
     calculatorMode: string
+    calculations: CalculationsInterface
 }
 
 export type UpdateDetailsTypeInterface = {
@@ -29,6 +45,17 @@ export type UpdateDetailsTypeInterface = {
     field: 'firstName' | 'lastName' | 'email'
     payload: Partial<TextInputInterface>
 }
+export type UpdateCalculationsTypeInterface = {
+    type: typeof UPDATE_CALCULATIONS
+    field: 'initialSavings' | 'monthlyContributions'
+    payload: Partial<TextInputInterface>
+}
+
+export type UpdateInterestRateInterface = {
+    type: typeof UPDATE_INTEREST
+    payload: number
+}
+
 export type AppProps = {
     children: React.ReactNode
 }
