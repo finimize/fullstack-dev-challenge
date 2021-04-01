@@ -16,7 +16,7 @@ export const InterestRateSlider: FC = () => {
     const { calculations } = state
 
     return (
-        <Box padding='2' marginBottom='2' marginRight='4'>
+        <Box padding='2' marginBottom='2'>
             <FormLabel fontSize='sm' marginBottom='2' color='text' fontWeight='500'>
                 Interest Rate
             </FormLabel>

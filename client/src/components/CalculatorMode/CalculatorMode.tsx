@@ -1,14 +1,5 @@
 import React, { FC, useContext } from 'react'
-import {
-    Box,
-    Text,
-    Grid,
-    Button,
-    useRadio,
-    UseRadioProps,
-    useRadioGroup,
-    HStack,
-} from '@chakra-ui/react'
+import { Box, Text, useRadio, UseRadioProps, useRadioGroup } from '@chakra-ui/react'
 import { AppContext } from '../../store'
 import { TOGGLE_MODE, NEXT_PAGE, PREVIOUS_PAGE } from '../../store/types'
 import { Card } from '../Card'
@@ -73,10 +64,16 @@ export const CalculatorMode: FC = () => {
     return (
         <Box>
             <Card>
-                <Text fontSize='sm' marginBottom='4' color='blueHeader' fontWeight='700'>
+                <Text
+                    fontSize='sm'
+                    marginBottom='4'
+                    color='blueHeader'
+                    fontWeight='700'
+                    textAlign='center'
+                >
                     Choose how you want to see your savings
                 </Text>
-                <Text fontSize='xs' marginBottom='4' color='grey5'>
+                <Text fontSize='xs' marginBottom='4' color='grey5' textAlign='center'>
                     Hi <em>{state.details.firstName.value}</em> Choose one of the options below to
                     to see how much money you can save:
                 </Text>
