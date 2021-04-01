@@ -6,6 +6,7 @@ import {
     VALIDATE_DETAILS,
     NEXT_PAGE,
     TOGGLE_MODE,
+    TOGGLE_COMPOUNDING_FREQUENCY,
     PREVIOUS_PAGE,
 } from './types'
 
@@ -20,8 +21,17 @@ interface DetailsInterface {
     email: TextInputInterface
 }
 
-interface DataInterface {
-    value?: number[]
+export interface DataValueInterface {
+    yearlySavings: number[]
+    finalValue: number
+    yearlyBreakdown: {
+        yearFinal: number
+        savings: []
+    }[]
+}
+
+export interface DataInterface {
+    value: DataValueInterface | null
     error: string
     isLoading: boolean
 }
@@ -83,7 +93,18 @@ export type ToggleModeInterface = {
     payload: string
 }
 
+export enum CompoundingFrequency {
+    annually = 1,
+    quarterly = 4,
+    monthly = 12,
+}
+
+export type ToggleCompoundingFrequencyInterface = {
+    type: typeof TOGGLE_COMPOUNDING_FREQUENCY
+    payload: string
+}
+
 export type UpdateDataInterface = {
     type: typeof UPDATE_DATA
-    payload: number[]
+    payload: DataInterface
 }

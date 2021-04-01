@@ -9,6 +9,7 @@ import {
     AppProps,
     PreviousPageTypeInterface,
     ToggleModeInterface,
+    ToggleCompoundingFrequencyInterface,
     UpdateCalculationsTypeInterface,
     UpdateInterestRateInterface,
     UpdateDataInterface,
@@ -23,6 +24,7 @@ const AppContext = createContext<{
         | ValidateDetailsTypeInterface
         | NextPageTypeInterface
         | ToggleModeInterface
+        | ToggleCompoundingFrequencyInterface
         | PreviousPageTypeInterface
         | UpdateInterestRateInterface
     >

@@ -1,4 +1,4 @@
-import { StateInterface } from './store.interface'
+import { StateInterface, CompoundingFrequency } from './store.interface'
 
 export const initialState: StateInterface = {
     details: {
@@ -16,17 +16,17 @@ export const initialState: StateInterface = {
         },
     },
     data: {
-        value: [],
+        value: null,
         error: '',
         isLoading: false,
     },
     calculations: {
         initialSavings: {
-            value: '0',
+            value: '10',
             error: '',
         },
         interestRate: 20,
-        compoundingFrequency: 1,
+        compoundingFrequency: CompoundingFrequency.annually,
         monthlyContributions: {
             value: '0',
             error: '',

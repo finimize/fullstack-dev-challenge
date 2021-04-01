@@ -6,6 +6,7 @@ import {
     VALIDATE_DETAILS,
     NEXT_PAGE,
     TOGGLE_MODE,
+    TOGGLE_COMPOUNDING_FREQUENCY,
     PREVIOUS_PAGE,
 } from './types'
 import {
@@ -17,7 +18,9 @@ import {
     ValidateDetailsTypeInterface,
     NextPageTypeInterface,
     ToggleModeInterface,
+    ToggleCompoundingFrequencyInterface,
     PreviousPageTypeInterface,
+    CompoundingFrequency,
 } from './store.interface'
 
 export const reducer = (
@@ -30,7 +33,8 @@ export const reducer = (
         | ValidateDetailsTypeInterface
         | NextPageTypeInterface
         | PreviousPageTypeInterface
-        | ToggleModeInterface,
+        | ToggleModeInterface
+        | ToggleCompoundingFrequencyInterface,
 ): StateInterface => {
     switch (action.type) {
         case NEXT_PAGE: {
@@ -49,6 +53,16 @@ export const reducer = (
             return {
                 ...initialState,
                 calculatorMode: action.payload,
+            }
+        }
+        case TOGGLE_COMPOUNDING_FREQUENCY: {
+            return {
+                ...initialState,
+                calculations: {
+                    ...initialState.calculations,
+                    compoundingFrequency:
+                        CompoundingFrequency[action.payload as keyof typeof CompoundingFrequency],
+                },
             }
         }
         case UPDATE_DETAILS:
@@ -80,7 +94,7 @@ export const reducer = (
                 ...initialState,
                 data: {
                     ...initialState.data,
-                    value: action.payload,
+                    ...action.payload,
                 },
             }
         case VALIDATE_DETAILS:

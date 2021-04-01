@@ -33,9 +33,15 @@ export const postCalculations: PostCalculationsInterface = (req, res, next) => {
         } = req.body;
 
         let currentSavings = initialSavings;
-        let yearlySavings: number[][] = [[currentSavings]]
+        let yearlySavings: number[] = [currentSavings]
+        let yearlyBreakdown = [
+            {
+                yearFinal: currentSavings,
+                savings: [currentSavings]
+            }
+        ]
 
-        for (let year = 1; year <= 3; year+=1 ){
+        for (let year = 1; year <= 50; year+=1 ){
             let currentYearSavings: number[] = [];
             for (let month = 1; month <= 12; month+=1) {
                 currentSavings = month % (12/compoundingFrequency) === 0 
@@ -48,10 +54,22 @@ export const postCalculations: PostCalculationsInterface = (req, res, next) => {
             }
             yearlySavings = [
                 ...yearlySavings,
-                currentYearSavings
+                ...currentYearSavings
+            ]
+            yearlyBreakdown =[
+                ...yearlyBreakdown,
+                {
+                    yearFinal: currentSavings,
+                    savings: currentYearSavings
+                }
             ]
         }
-        return res.status(200).send({yearlySavings})
+        const savingsDetails = {
+                finalValue: currentSavings,
+                yearlySavings,
+                yearlyBreakdown
+        }
+        return res.status(200).send(savingsDetails)
 
     } catch (err) {
     return next(err);

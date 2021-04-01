@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2'
 import { theme } from '../theme'
 
 type Props = {
-    xAxisData: number[] | string[]
+    xAxisData: number[]
     yAxisData: number[]
     title?: string
     xLabel?: string
@@ -17,6 +17,15 @@ export const LineChart: FC<Props> = ({ xAxisData, yAxisData, title, xLabel, yLab
     }
 
     const options: ChartOptions = {
+        tooltips: {
+            callbacks: {
+                title: (tooltipItem) => {
+                    const year = Math.floor(Number(tooltipItem[0].xLabel))
+                    const month = (Number(tooltipItem[0].xLabel) * 12) % 12
+                    return `Year ${year}, Month ${month}`
+                },
+            },
+        },
         title: {
             display: !!title,
             text: title,
@@ -32,8 +41,15 @@ export const LineChart: FC<Props> = ({ xAxisData, yAxisData, title, xLabel, yLab
             xAxes: [
                 {
                     scaleLabel: { display: !!xLabel, labelString: xLabel },
-                    ticks: { display: true },
+                    ticks: {
+                        display: true,
+                        callback: (value) => (Number.isInteger(value) ? value : undefined),
+                        stepSize: 12,
+                        autoSkip: true,
+                        maxTicksLimit: 20,
+                    },
                     gridLines: { display: false },
+                    distribution: 'series',
                 },
             ],
         },
@@ -48,6 +64,7 @@ export const LineChart: FC<Props> = ({ xAxisData, yAxisData, title, xLabel, yLab
                         backgroundColor: theme.colors.blue100,
                         borderColor: theme.colors.primary,
                         data: yAxisData,
+                        steppedLine: true,
                     },
                 ],
             }}

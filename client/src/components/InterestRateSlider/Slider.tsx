@@ -16,12 +16,18 @@ export const InterestRateSlider: FC = () => {
     const { calculations } = state
 
     return (
-        <Box padding='2' maxWidth='72' marginBottom='2' marginRight='4'>
-            <FormLabel fontSize='sm' marginBottom='2' color='grey5' fontWeight='500'>
+        <Box padding='2' marginBottom='2' marginRight='4'>
+            <FormLabel fontSize='sm' marginBottom='2' color='text' fontWeight='500'>
                 Interest Rate
             </FormLabel>
-            <Box display='flex' alignItems='center'>
-                <Text fontSize='xs' color='grey5'>
+            <Box
+                backgroundColor='grey3'
+                borderRadius='8px'
+                padding='2'
+                display='flex'
+                alignItems='center'
+            >
+                <Text fontSize='xs' color='text'>
                     0%
                 </Text>
                 <Slider
@@ -45,12 +51,12 @@ export const InterestRateSlider: FC = () => {
                     </SliderTrack>
                     <SliderThumb boxSize={6} />
                 </Slider>
-                <Text fontSize='xs' color='grey5'>
+                <Text fontSize='xs' color='text'>
                     50%
                 </Text>
             </Box>
-            <Text fontSize='xs' color='grey5' fontWeight='700'>
-                Current interest rate: {state.calculations.interestRate}%
+            <Text fontSize='xs' color='blue700' marginTop='2'>
+                Current interest rate: <b>{state.calculations.interestRate}%</b>
             </Text>
         </Box>
     )

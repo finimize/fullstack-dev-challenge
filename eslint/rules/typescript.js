@@ -36,6 +36,8 @@ module.exports = () => {
       "react/jsx-props-no-spreading": 0,
       "no-use-before-define": "off",
       "@typescript-eslint/no-use-before-define": "off",
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": ["error"],
     },
     settings: {
       "import/parsers": {

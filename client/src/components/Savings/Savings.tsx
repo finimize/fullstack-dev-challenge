@@ -1,20 +1,20 @@
-import React, { FC, useContext, useEffect, useState } from 'react'
+import React, { FC, useContext, useEffect, useMemo } from 'react'
 import { Box, Text, Grid } from '@chakra-ui/react'
 import { AppContext } from '../../store'
 import { UPDATE_CALCULATIONS, UPDATE_DATA } from '../../store/types'
+import { DataValueInterface } from '../../store/store.interface'
 import { Card } from '../Card'
 import { Input } from '../Input'
+import { LineChart } from '../LineChart'
 import { InterestRateSlider } from '../InterestRateSlider'
 import { PageControls } from '../PageControls'
-
-// type DetailsProps = {
-//     // children: React.ReactNode
-// }
+import { CompoundFrequencyRadio } from '../CompoundFrequencyRadio'
 
 export const Savings: FC = () => {
     const { state, dispatch } = useContext(AppContext)
     const { calculations } = state
-    // const [sliderInterestRate, setSliderInterestRate] = useState(calculations.interestRate)
+
+    const monthsAxes = useMemo(() => Array.from({ length: 601 }, (_, i) => i / 12), [])
 
     const postCalculation = async (
         initialSavings: number,
@@ -42,20 +42,34 @@ export const Savings: FC = () => {
         postCalculation(
             Number(calculations.initialSavings.value),
             Number(calculations.interestRate),
-            1,
+            calculations.compoundingFrequency,
             Number(calculations.monthlyContributions.value),
         )
-            .then((data: number[]) =>
+            .then((data: DataValueInterface) =>
                 dispatch({
                     type: UPDATE_DATA,
-                    payload: data,
+                    payload: {
+                        value: { ...data },
+                        error: '',
+                        isLoading: false,
+                    },
                 }),
             )
-            .catch((err) => console.log(err))
+            .catch((err) =>
+                dispatch({
+                    type: UPDATE_DATA,
+                    payload: {
+                        value: null,
+                        error: String(err),
+                        isLoading: false,
+                    },
+                }),
+            )
     }, [
         calculations.interestRate,
         calculations.initialSavings.value,
         calculations.monthlyContributions.value,
+        calculations.compoundingFrequency,
     ])
 
     const handleChange = (e: string, field: 'initialSavings' | 'monthlyContributions') => {
@@ -71,7 +85,6 @@ export const Savings: FC = () => {
             },
         })
     }
-
     return (
         <Box>
             <Card>
@@ -81,7 +94,15 @@ export const Savings: FC = () => {
                 <Text fontSize='xs' marginBottom='4' color='grey5'>
                     Simply change the values below to see your results
                 </Text>
-                <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2,350px)' }}>
+                <Grid
+                    width='fit-content'
+                    padding='2'
+                    gridTemplateColumns={{ base: '1fr', md: 'repeat(2,350px)' }}
+                    backgroundColor='blue200'
+                    borderRadius='8px'
+                >
+                    <InterestRateSlider />
+                    <CompoundFrequencyRadio />
                     <Input
                         label='Initial Deposit'
                         isNumberInput
@@ -96,8 +117,16 @@ export const Savings: FC = () => {
                         error={state.calculations.monthlyContributions.error}
                         onChangeNumber={(e) => handleChange(e, 'monthlyContributions')}
                     />
-                    <InterestRateSlider />
                 </Grid>
+            </Card>
+            <Card>
+                <LineChart
+                    title='Savings Over time'
+                    xAxisData={monthsAxes}
+                    yAxisData={state.data.value?.yearlySavings || []}
+                    xLabel='Months'
+                    yLabel='Amount'
+                />
             </Card>
             <PageControls prevPage={() => null} nextPage={() => null} />
         </Box>

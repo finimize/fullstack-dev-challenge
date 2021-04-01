@@ -42,8 +42,8 @@ export const Input: FC<InputProps> = ({
         type,
     }
     return (
-        <Box padding='2' maxWidth={isNumberInput ? '72' : '96'} marginBottom='2'>
-            <FormLabel fontSize='sm' marginBottom='2' color='grey5' fontWeight='500'>
+        <Box padding='2' maxWidth={'96'} marginBottom='2' marginRight='4'>
+            <FormLabel fontSize='sm' marginBottom='2' color='text' fontWeight='500'>
                 {label}
             </FormLabel>
             {isNumberInput ? (
@@ -52,6 +52,7 @@ export const Input: FC<InputProps> = ({
                     onChange={onChangeNumber}
                     value={value}
                     min={min || 0}
+                    backgroundColor='white'
                 >
                     <NumberInputField />
                     <NumberInputStepper>
