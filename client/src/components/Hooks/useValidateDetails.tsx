@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { AppContext } from '../../store'
-import { VALIDATE_DETAILS } from '../../store/types'
 
 interface ValidationDetailsInterface {
     valid: boolean

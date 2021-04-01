@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import './App.css'
-import { ChakraProvider, extendTheme, Container } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { AppProvider } from './store'
 import { DefaultLayout } from './components/layouts/Default'
 import { theme } from './theme'

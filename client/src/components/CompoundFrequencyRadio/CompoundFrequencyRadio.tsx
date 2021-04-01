@@ -3,7 +3,6 @@ import { Box, useRadio, UseRadioProps, useRadioGroup, FormLabel } from '@chakra-
 import { AppContext } from '../../store'
 import { TOGGLE_COMPOUNDING_FREQUENCY } from '../../store/types'
 import { CompoundingFrequency } from '../../store/store.interface'
-import { Card } from '../Card'
 
 interface RadioCardProps extends UseRadioProps {
     children: React.ReactNode
