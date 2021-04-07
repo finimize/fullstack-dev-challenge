@@ -64,7 +64,7 @@ exports[`App renders learn react link 1`] = `
           class="css-v8qn0c"
         >
           <div
-            class="css-2hjbmo"
+            class="css-1d1yckv"
           >
             <label
               class="chakra-form__label css-wuh3rg"
@@ -81,7 +81,7 @@ exports[`App renders learn react link 1`] = `
             />
           </div>
           <div
-            class="css-2hjbmo"
+            class="css-1d1yckv"
           >
             <label
               class="chakra-form__label css-wuh3rg"
@@ -98,7 +98,7 @@ exports[`App renders learn react link 1`] = `
             />
           </div>
           <div
-            class="css-2hjbmo"
+            class="css-1d1yckv"
           >
             <label
               class="chakra-form__label css-wuh3rg"

@@ -3,8 +3,8 @@ import { Box, Button } from '@chakra-ui/react'
 import { AppContext } from '../../store'
 
 interface PageControlProps {
-    prevPage: () => void
-    nextPage: () => void
+    prevPage?: () => void
+    nextPage?: () => void
 }
 
 export const PageControls: FC<PageControlProps> = ({ prevPage, nextPage }) => {

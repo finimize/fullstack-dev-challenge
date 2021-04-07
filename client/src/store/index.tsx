@@ -15,19 +15,19 @@ import {
     UpdateDataInterface,
 } from './store.interface'
 
+export type DispatchType =
+    | UpdateDetailsTypeInterface
+    | UpdateCalculationsTypeInterface
+    | UpdateDataInterface
+    | ValidateDetailsTypeInterface
+    | NextPageTypeInterface
+    | ToggleModeInterface
+    | ToggleCompoundingFrequencyInterface
+    | PreviousPageTypeInterface
+    | UpdateInterestRateInterface
 const AppContext = createContext<{
     state: StateInterface
-    dispatch: React.Dispatch<
-        | UpdateDetailsTypeInterface
-        | UpdateCalculationsTypeInterface
-        | UpdateDataInterface
-        | ValidateDetailsTypeInterface
-        | NextPageTypeInterface
-        | ToggleModeInterface
-        | ToggleCompoundingFrequencyInterface
-        | PreviousPageTypeInterface
-        | UpdateInterestRateInterface
-    >
+    dispatch: React.Dispatch<DispatchType>
 }>({
     state: initialState,
     dispatch: () => null,

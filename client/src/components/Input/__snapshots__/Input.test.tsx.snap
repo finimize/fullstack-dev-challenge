@@ -4,7 +4,7 @@ exports[`component/CalculatorMode renders Calculator Mode component 1`] = `
 <div>
    
   <div
-    class="css-2hjbmo"
+    class="css-1d1yckv"
   >
     <label
       class="chakra-form__label css-wuh3rg"
@@ -29,7 +29,7 @@ exports[`component/CalculatorMode renders Calculator Mode component 2`] = `
 <div>
    
   <div
-    class="css-2hjbmo"
+    class="css-1d1yckv"
   >
     <label
       class="chakra-form__label css-wuh3rg"

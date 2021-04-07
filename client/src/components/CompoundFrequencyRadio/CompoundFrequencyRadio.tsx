@@ -13,16 +13,17 @@ export const RadioCard: FC<RadioCardProps> = (props) => {
 
     const input = getInputProps()
     const checkbox = getCheckboxProps()
-
+    const { value } = props
     return (
-        <Box display='flex' as='label'>
-            <input {...input} />
+        <Box display='grid' as='label' justifyContent='center'>
+            <input {...input} data-testid={`cfr-${value as string}`} />
             <Box
                 {...checkbox}
                 cursor='pointer'
                 borderWidth='1px'
                 borderRadius='md'
                 boxShadow='md'
+                width='fit-content'
                 bg='white'
                 _checked={{
                     bg: 'blue500',
@@ -36,7 +37,7 @@ export const RadioCard: FC<RadioCardProps> = (props) => {
                 px={2}
                 py={2}
                 textAlign='center'
-                fontSize='sm'
+                fontSize='xs'
                 fontWeight='700'
                 margin='2'
                 height='fit-content'
@@ -69,13 +70,19 @@ export const CompoundFrequencyRadio: FC = () => {
             </FormLabel>
             <Box
                 {...group}
-                display='flex'
+                display='grid'
+                py='9px'
+                height='auto'
                 width='100%'
                 backgroundColor='grey3'
                 borderRadius='8px'
                 justifyContent='space-evenly'
                 alignItems='center'
-                height='72px'
+                // height='72px'
+                gridTemplateColumns={{
+                    base: '1fr',
+                    sm: 'repeat(3,1fr)',
+                }}
             >
                 {options.map((value) => {
                     const radio = getRadioProps({ value })

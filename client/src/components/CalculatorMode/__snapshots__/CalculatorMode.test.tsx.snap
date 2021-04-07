@@ -164,7 +164,7 @@ exports[`component/CalculatorMode allows calculator modes to be changed to simpl
           <p
             class="chakra-text css-8om1m1"
           >
-            This advanced setting will let you picture how much you could posssibly make if you were contributing regularly to your account
+            This will allow you to see excatly how much your money will grow over time as soon as you make your first deposit.
           </p>
         </div>
       </div>

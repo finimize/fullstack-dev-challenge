@@ -21,7 +21,7 @@ export const Details: FC = () => {
     ) => {
         const validateNonEmpty = (str: string): string =>
             str.length === 0 || !str.trim() ? 'Please enter a value' : ''
-        const error = state.details[field].error && validateNonEmpty(e.target.value)
+        const error = validateNonEmpty(e.target.value)
         return dispatch({
             type: UPDATE_DETAILS,
             field,
@@ -82,7 +82,7 @@ export const Details: FC = () => {
                     />
                 </Grid>
             </Card>
-            <PageControls prevPage={() => null} nextPage={nextPage} />
+            <PageControls nextPage={nextPage} />
         </Box>
     )
 }

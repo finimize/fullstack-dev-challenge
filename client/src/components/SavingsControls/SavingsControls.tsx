@@ -40,19 +40,18 @@ export const SavingsControls: FC = () => {
             <Text fontSize='xs' marginBottom='4' color='grey5' textAlign='center'>
                 Simply change the values below to see your results
             </Text>
-            <Box display='flex' justifyContent='center'>
+            <Box display='grid' gridTemplateColumns='1fr' justifyContent='center'>
                 <Grid
-                    width='fit-content'
+                    width='auto'
                     padding='4'
                     gridTemplateColumns={{
                         base: '1fr',
-                        md: isSimpleMode ? '1fr' : 'repeat(2,350px)',
+                        md: 'repeat(2,1fr)',
+                        xl: 'repeat(4,1fr)',
                     }}
                     backgroundColor='blue200'
                     borderRadius='8px'
                 >
-                    <InterestRateSlider />
-                    {!isSimpleMode && <CompoundFrequencyRadio />}
                     <Input
                         label='Initial Deposit'
                         isNumberInput
@@ -69,6 +68,8 @@ export const SavingsControls: FC = () => {
                             onChangeNumber={(e) => handleChange(e, 'monthlyContributions')}
                         />
                     )}
+                    <InterestRateSlider />
+                    {!isSimpleMode && <CompoundFrequencyRadio />}
                 </Grid>
             </Box>
         </Card>
