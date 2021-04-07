@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/CalculatorMode renders Calculator Mode component 1`] = `
+<div>
+   
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-18cdwwf"
+      >
+        Tell us a little about yourself
+      </p>
+      <p
+        class="chakra-text css-ut9id6"
+      >
+        To help you get the most out of your savings and personalise this expereinces for please provide us with a few details to really help you maximise your savings and help you get to a brighter fanciancial future!
+      </p>
+      <div
+        class="css-v8qn0c"
+      >
+        <div
+          class="css-2hjbmo"
+        >
+          <label
+            class="chakra-form__label css-wuh3rg"
+          >
+            First Name
+          </label>
+          <input
+            class="chakra-input css-1ttok2p"
+            data-testid="input-First Name"
+            value=""
+          />
+          <p
+            class="chakra-text css-80ht2y"
+          />
+        </div>
+        <div
+          class="css-2hjbmo"
+        >
+          <label
+            class="chakra-form__label css-wuh3rg"
+          >
+            Last Name
+          </label>
+          <input
+            class="chakra-input css-1ttok2p"
+            data-testid="input-Last Name"
+            value=""
+          />
+          <p
+            class="chakra-text css-80ht2y"
+          />
+        </div>
+        <div
+          class="css-2hjbmo"
+        >
+          <label
+            class="chakra-form__label css-wuh3rg"
+          >
+            Email
+          </label>
+          <input
+            class="chakra-input css-1ttok2p"
+            data-testid="input-Email"
+            value=""
+          />
+          <p
+            class="chakra-text css-80ht2y"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-j4xgao"
+    >
+      <button
+        class="chakra-button css-1mi4eb0"
+        data-testid="next-button"
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+   
+   
+</div>
+`;
+
+exports[`component/CalculatorMode renders Calculator Mode component 2`] = `
+<div>
+   
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-18cdwwf"
+      >
+        Tell us a little about yourself
+      </p>
+      <p
+        class="chakra-text css-ut9id6"
+      >
+        To help you get the most out of your savings and personalise this expereinces for please provide us with a few details to really help you maximise your savings and help you get to a brighter fanciancial future!
+      </p>
+      <div
+        class="css-v8qn0c"
+      >
+        <div
+          class="css-2hjbmo"
+        >
+          <label
+            class="chakra-form__label css-wuh3rg"
+          >
+            First Name
+          </label>
+          <input
+            class="chakra-input css-1ttok2p"
+            data-testid="input-First Name"
+            value=""
+          />
+          <p
+            class="chakra-text css-80ht2y"
+          />
+        </div>
+        <div
+          class="css-2hjbmo"
+        >
+          <label
+            class="chakra-form__label css-wuh3rg"
+          >
+            Last Name
+          </label>
+          <input
+            class="chakra-input css-1ttok2p"
+            data-testid="input-Last Name"
+            value=""
+          />
+          <p
+            class="chakra-text css-80ht2y"
+          />
+        </div>
+        <div
+          class="css-2hjbmo"
+        >
+          <label
+            class="chakra-form__label css-wuh3rg"
+          >
+            Email
+          </label>
+          <input
+            class="chakra-input css-1ttok2p"
+            data-testid="input-Email"
+            value=""
+          />
+          <p
+            class="chakra-text css-80ht2y"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-j4xgao"
+    >
+      <button
+        class="chakra-button css-1mi4eb0"
+        data-testid="next-button"
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+   
+   
+</div>
+`;

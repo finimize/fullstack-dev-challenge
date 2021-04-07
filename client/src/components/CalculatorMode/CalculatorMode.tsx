@@ -1,23 +1,27 @@
 import React, { FC, useContext } from 'react'
 import { Box, Text, useRadio, UseRadioProps, useRadioGroup } from '@chakra-ui/react'
 import { AppContext } from '../../store'
-import { TOGGLE_MODE, NEXT_PAGE, PREVIOUS_PAGE } from '../../store/types'
+import {
+    TOGGLE_MODE,
+    NEXT_PAGE,
+    PREVIOUS_PAGE,
+    UPDATE_CALCULATIONS,
+    TOGGLE_COMPOUNDING_FREQUENCY,
+} from '../../store/types'
 import { Card } from '../Card'
 import { PageControls } from '../PageControls'
 
 interface RadioCardProps extends UseRadioProps {
     children: React.ReactNode
 }
-
-const RadioCard = (props: RadioCardProps) => {
+export const RadioCard: FC<RadioCardProps> = (props) => {
     const { getInputProps, getCheckboxProps } = useRadio(props)
 
     const input = getInputProps()
     const checkbox = getCheckboxProps()
-
     return (
         <Box display='flex' as='label'>
-            <input {...input} />
+            <input {...input} data-testid={props.value} />
             <Box
                 {...checkbox}
                 cursor='pointer'
@@ -54,7 +58,19 @@ export const CalculatorMode: FC = () => {
     const { getRootProps, getRadioProps } = useRadioGroup({
         name: 'framework',
         defaultValue: state.calculatorMode,
-        onChange: (value) => dispatch({ type: TOGGLE_MODE, payload: String(value) }),
+        onChange: (value) => {
+            dispatch({ type: TOGGLE_MODE, payload: String(value) })
+            if (value === 'Simple') {
+                dispatch({
+                    type: UPDATE_CALCULATIONS,
+                    field: 'monthlyContributions',
+                    payload: {
+                        value: '0',
+                    },
+                })
+                dispatch({ type: TOGGLE_COMPOUNDING_FREQUENCY, payload: 'annually' })
+            }
+        },
     })
 
     const group = getRootProps()

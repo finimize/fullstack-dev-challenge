@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/CalculatorMode allows calculator modes to be changed to advacned mode 1`] = `
+<div>
+   
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-nrvl4t"
+      >
+        Choose how you want to see your savings
+      </p>
+      <p
+        class="chakra-text css-ulf43m"
+      >
+        Hi 
+        <em />
+         Choose one of the options below to to see how much money you can save:
+      </p>
+      <div
+        class="css-1wlqeol"
+      >
+        <div
+          class="css-ocze9x"
+          role="radiogroup"
+        >
+          <label
+            class="css-k008qs"
+          >
+            <input
+              checked=""
+              data-testid="Simple"
+              name="framework"
+              style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+              type="radio"
+              value="Simple"
+            />
+            <div
+              aria-hidden="true"
+              class="css-1r0ytuv"
+            >
+              Simple
+            </div>
+          </label>
+          <label
+            class="css-k008qs"
+          >
+            <input
+              data-testid="Advanced"
+              name="framework"
+              style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+              type="radio"
+              value="Advanced"
+            />
+            <div
+              aria-hidden="true"
+              class="css-1r0ytuv"
+              data-checked=""
+            >
+              Advanced
+            </div>
+          </label>
+        </div>
+        <div
+          class="css-olyig7"
+        >
+          <p
+            class="chakra-text css-8om1m1"
+          >
+            This advanced setting will let you picture how much you could posssibly make if you were contributing regularly to your account
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-j4xgao"
+    >
+      <button
+        class="chakra-button css-1mi4eb0"
+        data-testid="next-button"
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+   
+   
+</div>
+`;
+
+exports[`component/CalculatorMode allows calculator modes to be changed to simple mode 1`] = `
+<div>
+   
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-nrvl4t"
+      >
+        Choose how you want to see your savings
+      </p>
+      <p
+        class="chakra-text css-ulf43m"
+      >
+        Hi 
+        <em />
+         Choose one of the options below to to see how much money you can save:
+      </p>
+      <div
+        class="css-1wlqeol"
+      >
+        <div
+          class="css-ocze9x"
+          role="radiogroup"
+        >
+          <label
+            class="css-k008qs"
+          >
+            <input
+              data-testid="Simple"
+              name="framework"
+              style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+              type="radio"
+              value="Simple"
+            />
+            <div
+              aria-hidden="true"
+              class="css-1r0ytuv"
+              data-checked=""
+            >
+              Simple
+            </div>
+          </label>
+          <label
+            class="css-k008qs"
+          >
+            <input
+              checked=""
+              data-testid="Advanced"
+              name="framework"
+              style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+              type="radio"
+              value="Advanced"
+            />
+            <div
+              aria-hidden="true"
+              class="css-1r0ytuv"
+            >
+              Advanced
+            </div>
+          </label>
+        </div>
+        <div
+          class="css-olyig7"
+        >
+          <p
+            class="chakra-text css-8om1m1"
+          >
+            This advanced setting will let you picture how much you could posssibly make if you were contributing regularly to your account
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-j4xgao"
+    >
+      <button
+        class="chakra-button css-1mi4eb0"
+        data-testid="next-button"
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+   
+   
+</div>
+`;
+
+exports[`component/CalculatorMode renders Calculator Mode component 1`] = `
+<div>
+   
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-nrvl4t"
+      >
+        Choose how you want to see your savings
+      </p>
+      <p
+        class="chakra-text css-ulf43m"
+      >
+        Hi 
+        <em />
+         Choose one of the options below to to see how much money you can save:
+      </p>
+      <div
+        class="css-1wlqeol"
+      >
+        <div
+          class="css-ocze9x"
+          role="radiogroup"
+        >
+          <label
+            class="css-k008qs"
+          >
+            <input
+              checked=""
+              data-testid="Simple"
+              name="framework"
+              style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+              type="radio"
+              value="Simple"
+            />
+            <div
+              aria-hidden="true"
+              class="css-1r0ytuv"
+              data-checked=""
+            >
+              Simple
+            </div>
+          </label>
+          <label
+            class="css-k008qs"
+          >
+            <input
+              data-testid="Advanced"
+              name="framework"
+              style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+              type="radio"
+              value="Advanced"
+            />
+            <div
+              aria-hidden="true"
+              class="css-1r0ytuv"
+            >
+              Advanced
+            </div>
+          </label>
+        </div>
+        <div
+          class="css-olyig7"
+        >
+          <p
+            class="chakra-text css-8om1m1"
+          >
+            This will allow you to see excatly how much your money will grow over time as soon as you make your first deposit.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-j4xgao"
+    >
+      <button
+        class="chakra-button css-1mi4eb0"
+        data-testid="next-button"
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+   
+   
+</div>
+`;

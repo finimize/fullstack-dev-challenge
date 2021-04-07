@@ -61,7 +61,7 @@ export const Input: FC<InputProps> = ({
                     </NumberInputStepper>
                 </NumberInput>
             ) : (
-                <ChakraInput {...inputProps} />
+                <ChakraInput {...inputProps} data-testid={`input-${label}`} />
             )}
             <Text fontSize='sm' marginBottom='2' color='danger' fontWeight='500'>
                 {error}

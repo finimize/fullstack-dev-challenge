@@ -49,7 +49,7 @@ export const InterestRateSlider: FC = () => {
                         <Box position='relative' right={10} />
                         <SliderFilledTrack bg='tomato' />
                     </SliderTrack>
-                    <SliderThumb boxSize={6} />
+                    <SliderThumb boxSize={6} data-testid='interest-rate-slider' />
                 </Slider>
                 <Text fontSize='xs' color='text'>
                     50%

@@ -33,5 +33,5 @@ export const initialState: StateInterface = {
         },
     },
     calculatorMode: 'Simple',
-    currentPage: 3,
+    currentPage: 1,
 }

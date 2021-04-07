@@ -19,6 +19,7 @@ export const PageControls: FC<PageControlProps> = ({ prevPage, nextPage }) => {
         <Box justifyContent={buttonJustification()} display='flex' padding='8'>
             {state.currentPage !== 1 && (
                 <Button
+                    data-testid='previous-button'
                     backgroundColor='primary'
                     width='24'
                     _hover={{
@@ -33,6 +34,7 @@ export const PageControls: FC<PageControlProps> = ({ prevPage, nextPage }) => {
             )}
             {state.currentPage !== 3 && (
                 <Button
+                    data-testid='next-button'
                     width='24'
                     borderColor='blue400'
                     borderWidth='2px'

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/PageControls allows only next button on 1st page 1`] = `
+<div>
+   
+  <div
+    class="css-j4xgao"
+  >
+    <button
+      class="chakra-button css-1mi4eb0"
+      data-testid="next-button"
+      type="button"
+    >
+      Next
+    </button>
+  </div>
+   
+   
+</div>
+`;
+
+exports[`component/PageControls allows only previous button on 3st page 1`] = `
+<div>
+   
+  <div
+    class="css-fo25ua"
+  >
+    <button
+      class="chakra-button css-a7myp6"
+      data-testid="previous-button"
+      type="button"
+    >
+      Back
+    </button>
+  </div>
+   
+   
+</div>
+`;
+
+exports[`component/PageControls allows to both buttons to be pressed on second page 1`] = `
+<div>
+   
+  <div
+    class="css-jo7bsi"
+  >
+    <button
+      class="chakra-button css-a7myp6"
+      data-testid="previous-button"
+      type="button"
+    >
+      Back
+    </button>
+    <button
+      class="chakra-button css-1mi4eb0"
+      data-testid="next-button"
+      type="button"
+    >
+      Next
+    </button>
+  </div>
+   
+   
+</div>
+`;

@@ -8,7 +8,7 @@ interface RadioCardProps extends UseRadioProps {
     children: React.ReactNode
 }
 
-const RadioCard = (props: RadioCardProps) => {
+export const RadioCard: FC<RadioCardProps> = (props) => {
     const { getInputProps, getCheckboxProps } = useRadio(props)
 
     const input = getInputProps()
