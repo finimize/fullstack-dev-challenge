@@ -2,7 +2,7 @@ import React, { FC, useContext, useMemo } from 'react'
 import { Text } from '@chakra-ui/react'
 import { AppContext } from '../../store'
 import { Card } from '../Card'
-import { LineChart } from '../LineChart'
+import { LineChart } from './LineChart'
 
 export const SavingsChart: FC = () => {
     const { state } = useContext(AppContext)

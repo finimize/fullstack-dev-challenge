@@ -1,7 +1,7 @@
 import { ChartLegendOptions, ChartOptions } from 'chart.js'
 import React, { FC } from 'react'
 import { Line } from 'react-chartjs-2'
-import { theme } from '../theme'
+import { theme } from '../../theme'
 
 type Props = {
     xAxisData: number[]
@@ -16,6 +16,7 @@ export const LineChart: FC<Props> = ({ xAxisData, yAxisData, title, xLabel, yLab
         display: false,
     }
 
+    /* istanbul ignore next */
     const options: ChartOptions = {
         tooltips: {
             callbacks: {

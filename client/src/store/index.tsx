@@ -15,6 +15,7 @@ import {
     UpdateDataInterface,
 } from './store.interface'
 
+/* istanbul ignore next */
 export type DispatchType =
     | UpdateDetailsTypeInterface
     | UpdateCalculationsTypeInterface
@@ -25,6 +26,8 @@ export type DispatchType =
     | ToggleCompoundingFrequencyInterface
     | PreviousPageTypeInterface
     | UpdateInterestRateInterface
+
+/* istanbul ignore next */
 const AppContext = createContext<{
     state: StateInterface
     dispatch: React.Dispatch<DispatchType>

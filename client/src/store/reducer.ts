@@ -116,6 +116,7 @@ export const reducer = (
                     },
                 },
             }
+        /* istanbul ignore next */
         default:
             return initialState
     }
