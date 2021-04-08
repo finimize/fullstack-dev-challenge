@@ -8,6 +8,7 @@ import {
     TOGGLE_MODE,
     TOGGLE_COMPOUNDING_FREQUENCY,
     PREVIOUS_PAGE,
+    GOT_TO_PAGE,
 } from './types'
 
 export interface TextInputInterface {
@@ -86,6 +87,10 @@ export type NextPageTypeInterface = {
 
 export type PreviousPageTypeInterface = {
     type: typeof PREVIOUS_PAGE
+}
+export type GoToPageInterface = {
+    type: typeof GOT_TO_PAGE
+    payload: number
 }
 
 export type ToggleModeInterface = {

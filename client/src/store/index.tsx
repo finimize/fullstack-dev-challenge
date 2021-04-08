@@ -13,6 +13,7 @@ import {
     UpdateCalculationsTypeInterface,
     UpdateInterestRateInterface,
     UpdateDataInterface,
+    GoToPageInterface,
 } from './store.interface'
 
 /* istanbul ignore next */
@@ -26,6 +27,7 @@ export type DispatchType =
     | ToggleCompoundingFrequencyInterface
     | PreviousPageTypeInterface
     | UpdateInterestRateInterface
+    | GoToPageInterface
 
 /* istanbul ignore next */
 const AppContext = createContext<{

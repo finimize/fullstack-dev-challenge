@@ -8,6 +8,7 @@ import {
     TOGGLE_MODE,
     TOGGLE_COMPOUNDING_FREQUENCY,
     PREVIOUS_PAGE,
+    GOT_TO_PAGE,
 } from './types'
 import {
     StateInterface,
@@ -21,6 +22,7 @@ import {
     ToggleCompoundingFrequencyInterface,
     PreviousPageTypeInterface,
     CompoundingFrequency,
+    GoToPageInterface,
 } from './store.interface'
 
 export const reducer = (
@@ -34,13 +36,20 @@ export const reducer = (
         | NextPageTypeInterface
         | PreviousPageTypeInterface
         | ToggleModeInterface
-        | ToggleCompoundingFrequencyInterface,
+        | ToggleCompoundingFrequencyInterface
+        | GoToPageInterface,
 ): StateInterface => {
     switch (action.type) {
         case NEXT_PAGE: {
             return {
                 ...initialState,
                 currentPage: initialState.currentPage + 1,
+            }
+        }
+        case GOT_TO_PAGE: {
+            return {
+                ...initialState,
+                currentPage: action.payload,
             }
         }
         case PREVIOUS_PAGE: {
