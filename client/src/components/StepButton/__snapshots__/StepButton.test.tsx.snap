@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/Savings renders Calculator Mode component 1`] = `
+<div>
+   
+  <button
+    class="chakra-button css-mxlia0"
+    type="button"
+  >
+    1
+  </button>
+   
+   
+</div>
+`;
+
+exports[`component/Savings renders step button component 1`] = `
+<div>
+   
+  <button
+    class="chakra-button css-mxlia0"
+    type="button"
+  >
+    1
+  </button>
+   
+   
+</div>
+`;
+
+exports[`component/Savings renders step button component when selected 1`] = `
+<div>
+   
+  <button
+    class="chakra-button css-10dvod4"
+    type="button"
+  >
+    1
+  </button>
+   
+   
+</div>
+`;

@@ -8,7 +8,7 @@ import { Savings } from './Savings'
 
 afterEach(cleanup)
 
-describe('component/SavingsChart', () => {
+describe('component/Savings', () => {
     it('renders savings component in simple mode', () => {
         const { render } = customRender(<Savings />, {})
         const { container } = render

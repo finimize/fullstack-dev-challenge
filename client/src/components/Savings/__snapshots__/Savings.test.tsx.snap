@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`component/SavingsChart renders savings component in advanced mode 1`] = `
+exports[`component/Savings renders savings component in advanced mode 1`] = `
 <div>
    
   <div
@@ -331,7 +331,7 @@ exports[`component/SavingsChart renders savings component in advanced mode 1`] =
 </div>
 `;
 
-exports[`component/SavingsChart renders savings component in simple mode 1`] = `
+exports[`component/Savings renders savings component in simple mode 1`] = `
 <div>
    
   <div
