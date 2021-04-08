@@ -20,14 +20,15 @@
       "target": "es6",
       "moduleResolution": "node",
       "types": [
-        "node"
+        "node",
+        "mocha"
       ],
       "typeRoots": [
         "node_modules/@types"
       ]
     },
     "include": [
-      "./**/*.ts",
+      "./**/*.ts"
     ],
     "exclude": [
       "./client"
