@@ -58,7 +58,7 @@ export const Savings: FC = () => {
         <Box>
             <SavingsControls />
             <SavingsChart />
-            <PageControls prevPage={prevPage} nextPage={() => null} />
+            <PageControls prevPage={prevPage} />
         </Box>
     )
 }

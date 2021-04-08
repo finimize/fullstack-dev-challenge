@@ -46,6 +46,7 @@ exports[`component/CalculatorMode renders Calculator Mode component 2`] = `
         autocomplete="off"
         autocorrect="off"
         class="css-1ttok2p"
+        data-testid="input-number test"
         inputmode="decimal"
         pattern="[0-9]*(.[0-9]+)?"
         role="spinbutton"

@@ -5,6 +5,7 @@ exports[`component/CompoundFrequencyRadio renders Calculator Mode component 1`] 
    
   <div
     class="css-uarar0"
+    data-testid="cfr-radio-input"
   >
     <label
       class="chakra-form__label css-wuh3rg"

@@ -64,7 +64,7 @@ export const CompoundFrequencyRadio: FC = () => {
 
     const group = getRootProps()
     return (
-        <Box padding='2' marginBottom='2'>
+        <Box padding='2' marginBottom='2' data-testid='cfr-radio-input'>
             <FormLabel fontSize='sm' marginBottom='2' color='text' fontWeight='500'>
                 Interest Frequency
             </FormLabel>

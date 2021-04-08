@@ -59,7 +59,7 @@ describe('component/CalculatorMode', () => {
         expect(simplebutton).toBeChecked()
         expect(container).toMatchSnapshot()
     })
-    it('allows to hit', () => {
+    it('allows to hit previous and next button', () => {
         const { render, dispatchMock } = customRender(<CalculatorMode />, {
             store: { ...initialState, currentPage: 2 },
         })

@@ -54,7 +54,7 @@ export const Input: FC<InputProps> = ({
                     min={min || 0}
                     backgroundColor='white'
                 >
-                    <NumberInputField />
+                    <NumberInputField data-testid={`input-${label}`} />
                     <NumberInputStepper>
                         <NumberIncrementStepper />
                         <NumberDecrementStepper />

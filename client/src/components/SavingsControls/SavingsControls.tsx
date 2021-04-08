@@ -58,6 +58,7 @@ export const SavingsControls: FC = () => {
                         value={state.calculations.initialSavings.value}
                         error={state.calculations.initialSavings.error}
                         onChangeNumber={(e) => handleChange(e, 'initialSavings')}
+                        data-testid='initial-deposit-input'
                     />
                     {!isSimpleMode && (
                         <Input
@@ -66,9 +67,10 @@ export const SavingsControls: FC = () => {
                             value={state.calculations.monthlyContributions.value}
                             error={state.calculations.monthlyContributions.error}
                             onChangeNumber={(e) => handleChange(e, 'monthlyContributions')}
+                            data-testid='mc-input'
                         />
                     )}
-                    <InterestRateSlider />
+                    <InterestRateSlider data-testid='interest-rate-slider' />
                     {!isSimpleMode && <CompoundFrequencyRadio />}
                 </Grid>
             </Box>

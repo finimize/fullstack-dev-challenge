@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/Savings renders Calculator Mode component 1`] = `
+<div>
+   
+  <div
+    class="css-6z87o"
+  >
+    <p
+      class="chakra-text css-nrvl4t"
+    >
+      Overview
+    </p>
+  </div>
+   
+   
+</div>
+`;

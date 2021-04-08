@@ -26,7 +26,7 @@ export interface DataValueInterface {
     finalValue: number
     yearlyBreakdown: {
         yearFinal: number
-        savings: []
+        savings: number[]
     }[]
 }
 

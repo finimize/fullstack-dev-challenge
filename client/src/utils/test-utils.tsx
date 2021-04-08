@@ -14,7 +14,7 @@ interface CustomRenderOptions extends Partial<RenderOptions> {
     defaultTheme?: typeof theme
 }
 
-interface CustomRenderInterface {
+export interface CustomRenderInterface {
     (
         ui: React.ReactElement<unknown, string | React.JSXElementConstructor<unknown>>,
         options: CustomRenderOptions,

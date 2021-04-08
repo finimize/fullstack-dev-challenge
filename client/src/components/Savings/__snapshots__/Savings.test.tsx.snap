@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/SavingsChart renders savings component in advanced mode 1`] = `
+<div>
+   
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-nrvl4t"
+      >
+        Saving controls
+      </p>
+      <p
+        class="chakra-text css-ulf43m"
+      >
+        Simply change the values below to see your results
+      </p>
+      <div
+        class="css-174mulg"
+      >
+        <div
+          class="css-lyhr6k"
+        >
+          <div
+            class="css-1d1yckv"
+          >
+            <label
+              class="chakra-form__label css-wuh3rg"
+            >
+              Initial Deposit
+            </label>
+            <div
+              class="css-ylxpfg"
+              value="10"
+            >
+              <input
+                aria-invalid="false"
+                aria-valuemax="9007199254740991"
+                aria-valuemin="0"
+                aria-valuenow="10"
+                aria-valuetext="10"
+                autocomplete="off"
+                autocorrect="off"
+                class="css-1ttok2p"
+                data-testid="input-Initial Deposit"
+                inputmode="decimal"
+                pattern="[0-9]*(.[0-9]+)?"
+                role="spinbutton"
+                type="text"
+                value="10"
+              />
+              <div
+                aria-hidden="true"
+                class="css-1rscer7"
+              >
+                <div
+                  class="css-9pjy17"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="chakra-icon css-onkibi"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.8,5.4c-0.377-0.504-1.223-0.504-1.6,0l-9,12c-0.228,0.303-0.264,0.708-0.095,1.047 C2.275,18.786,2.621,19,3,19h18c0.379,0,0.725-0.214,0.895-0.553c0.169-0.339,0.133-0.744-0.095-1.047L12.8,5.4z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="css-9pjy17"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="chakra-icon css-onkibi"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <p
+              class="chakra-text css-80ht2y"
+            />
+          </div>
+          <div
+            class="css-1d1yckv"
+          >
+            <label
+              class="chakra-form__label css-wuh3rg"
+            >
+              Monthly Contributions
+            </label>
+            <div
+              class="css-ylxpfg"
+              value="0"
+            >
+              <input
+                aria-invalid="false"
+                aria-valuemax="9007199254740991"
+                aria-valuemin="0"
+                aria-valuenow="0"
+                aria-valuetext="0"
+                autocomplete="off"
+                autocorrect="off"
+                class="css-1ttok2p"
+                data-testid="input-Monthly Contributions"
+                inputmode="decimal"
+                pattern="[0-9]*(.[0-9]+)?"
+                role="spinbutton"
+                type="text"
+                value="0"
+              />
+              <div
+                aria-hidden="true"
+                class="css-1rscer7"
+              >
+                <div
+                  class="css-9pjy17"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="chakra-icon css-onkibi"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.8,5.4c-0.377-0.504-1.223-0.504-1.6,0l-9,12c-0.228,0.303-0.264,0.708-0.095,1.047 C2.275,18.786,2.621,19,3,19h18c0.379,0,0.725-0.214,0.895-0.553c0.169-0.339,0.133-0.744-0.095-1.047L12.8,5.4z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div
+                  aria-disabled="true"
+                  class="css-9pjy17"
+                  disabled=""
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="chakra-icon css-onkibi"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <p
+              class="chakra-text css-80ht2y"
+            />
+          </div>
+          <div
+            class="css-uarar0"
+          >
+            <label
+              class="chakra-form__label css-wuh3rg"
+            >
+              Interest Rate
+            </label>
+            <div
+              class="css-x3oexv"
+            >
+              <p
+                class="chakra-text css-1njcsuf"
+              >
+                0%
+              </p>
+              <div
+                class="chakra-slider css-1jzw7c4"
+                style="position: relative; user-select: none; outline: 0; padding-top: 0px; padding-bottom: 0px;"
+                tabindex="-1"
+              >
+                <div
+                  class="chakra-slider__track css-yobz93"
+                  id="slider-track-3"
+                  style="position: absolute; top: 50%; transform: translateY(-50%); width: 100%;"
+                >
+                  <div
+                    class="css-fsxq0m"
+                  />
+                  <div
+                    class="chakra-slider__filled-track css-lbpcfc"
+                    style="position: absolute; top: 50%; transform: translateY(-50%); width: 40%; left: 0px;"
+                  />
+                </div>
+                <div
+                  aria-orientation="horizontal"
+                  aria-valuemax="50"
+                  aria-valuemin="0"
+                  aria-valuenow="20"
+                  class="chakra-slider__thumb css-t6tax2"
+                  data-testid="interest-rate-slider"
+                  id="slider-thumb-3"
+                  role="slider"
+                  style="position: absolute; user-select: none; left: calc(40% - 0px);"
+                  tabindex="0"
+                />
+                <input
+                  type="hidden"
+                  value="20"
+                />
+              </div>
+              <p
+                class="chakra-text css-1njcsuf"
+              >
+                50%
+              </p>
+            </div>
+            <p
+              class="chakra-text css-1as9u30"
+            >
+              Current interest rate: 
+              <b>
+                20
+                %
+              </b>
+            </p>
+          </div>
+          <div
+            class="css-uarar0"
+            data-testid="cfr-radio-input"
+          >
+            <label
+              class="chakra-form__label css-wuh3rg"
+            >
+              Interest Frequency
+            </label>
+            <div
+              class="css-171bmva"
+              role="radiogroup"
+            >
+              <label
+                class="css-l75mtb"
+              >
+                <input
+                  checked=""
+                  data-testid="cfr-annually"
+                  name="framework"
+                  style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                  type="radio"
+                  value="annually"
+                />
+                <div
+                  aria-hidden="true"
+                  class="css-15px1hi"
+                  data-checked=""
+                >
+                  annually
+                </div>
+              </label>
+              <label
+                class="css-l75mtb"
+              >
+                <input
+                  data-testid="cfr-quarterly"
+                  name="framework"
+                  style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                  type="radio"
+                  value="quarterly"
+                />
+                <div
+                  aria-hidden="true"
+                  class="css-15px1hi"
+                >
+                  quarterly
+                </div>
+              </label>
+              <label
+                class="css-l75mtb"
+              >
+                <input
+                  data-testid="cfr-monthly"
+                  name="framework"
+                  style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                  type="radio"
+                  value="monthly"
+                />
+                <div
+                  aria-hidden="true"
+                  class="css-15px1hi"
+                >
+                  monthly
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-nrvl4t"
+      >
+        Overview
+      </p>
+    </div>
+    <div
+      class="css-j4xgao"
+    >
+      <button
+        class="chakra-button css-1mi4eb0"
+        data-testid="next-button"
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+   
+   
+</div>
+`;
+
+exports[`component/SavingsChart renders savings component in simple mode 1`] = `
+<div>
+   
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-nrvl4t"
+      >
+        Saving controls
+      </p>
+      <p
+        class="chakra-text css-ulf43m"
+      >
+        Simply change the values below to see your results
+      </p>
+      <div
+        class="css-174mulg"
+      >
+        <div
+          class="css-lyhr6k"
+        >
+          <div
+            class="css-1d1yckv"
+          >
+            <label
+              class="chakra-form__label css-wuh3rg"
+            >
+              Initial Deposit
+            </label>
+            <div
+              class="css-ylxpfg"
+              value="10"
+            >
+              <input
+                aria-invalid="false"
+                aria-valuemax="9007199254740991"
+                aria-valuemin="0"
+                aria-valuenow="10"
+                aria-valuetext="10"
+                autocomplete="off"
+                autocorrect="off"
+                class="css-1ttok2p"
+                data-testid="input-Initial Deposit"
+                inputmode="decimal"
+                pattern="[0-9]*(.[0-9]+)?"
+                role="spinbutton"
+                type="text"
+                value="10"
+              />
+              <div
+                aria-hidden="true"
+                class="css-1rscer7"
+              >
+                <div
+                  class="css-9pjy17"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="chakra-icon css-onkibi"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.8,5.4c-0.377-0.504-1.223-0.504-1.6,0l-9,12c-0.228,0.303-0.264,0.708-0.095,1.047 C2.275,18.786,2.621,19,3,19h18c0.379,0,0.725-0.214,0.895-0.553c0.169-0.339,0.133-0.744-0.095-1.047L12.8,5.4z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="css-9pjy17"
+                  role="button"
+                  tabindex="-1"
+                >
+                  <svg
+                    class="chakra-icon css-onkibi"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <p
+              class="chakra-text css-80ht2y"
+            />
+          </div>
+          <div
+            class="css-uarar0"
+          >
+            <label
+              class="chakra-form__label css-wuh3rg"
+            >
+              Interest Rate
+            </label>
+            <div
+              class="css-x3oexv"
+            >
+              <p
+                class="chakra-text css-1njcsuf"
+              >
+                0%
+              </p>
+              <div
+                class="chakra-slider css-1jzw7c4"
+                style="position: relative; user-select: none; outline: 0; padding-top: 0px; padding-bottom: 0px;"
+                tabindex="-1"
+              >
+                <div
+                  class="chakra-slider__track css-yobz93"
+                  id="slider-track-1"
+                  style="position: absolute; top: 50%; transform: translateY(-50%); width: 100%;"
+                >
+                  <div
+                    class="css-fsxq0m"
+                  />
+                  <div
+                    class="chakra-slider__filled-track css-lbpcfc"
+                    style="position: absolute; top: 50%; transform: translateY(-50%); width: 40%; left: 0px;"
+                  />
+                </div>
+                <div
+                  aria-orientation="horizontal"
+                  aria-valuemax="50"
+                  aria-valuemin="0"
+                  aria-valuenow="20"
+                  class="chakra-slider__thumb css-t6tax2"
+                  data-testid="interest-rate-slider"
+                  id="slider-thumb-1"
+                  role="slider"
+                  style="position: absolute; user-select: none; left: calc(40% - 0px);"
+                  tabindex="0"
+                />
+                <input
+                  type="hidden"
+                  value="20"
+                />
+              </div>
+              <p
+                class="chakra-text css-1njcsuf"
+              >
+                50%
+              </p>
+            </div>
+            <p
+              class="chakra-text css-1as9u30"
+            >
+              Current interest rate: 
+              <b>
+                20
+                %
+              </b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-nrvl4t"
+      >
+        Overview
+      </p>
+    </div>
+    <div
+      class="css-j4xgao"
+    >
+      <button
+        class="chakra-button css-1mi4eb0"
+        data-testid="next-button"
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+   
+   
+</div>
+`;
