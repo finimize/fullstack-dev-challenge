@@ -8,7 +8,7 @@ import { SavingsControls } from './SavingsControls'
 afterEach(cleanup)
 
 describe('component/Savings Controls', () => {
-    it('renders Calculator Mode component', () => {
+    it('renders Savings Controls  component', () => {
         const { render } = customRender(<SavingsControls />, {})
         const { container } = render
         expect(container).toMatchSnapshot()

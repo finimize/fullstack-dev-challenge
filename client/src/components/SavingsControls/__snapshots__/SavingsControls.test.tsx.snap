@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`component/Savings Controls renders Calculator Mode component 1`] = `
+exports[`component/Savings Controls renders Savings Controls  component 1`] = `
 <div>
    
   <div
@@ -20,7 +20,7 @@ exports[`component/Savings Controls renders Calculator Mode component 1`] = `
       class="css-174mulg"
     >
       <div
-        class="css-lyhr6k"
+        class="css-9d4a7p"
       >
         <div
           class="css-1d1yckv"

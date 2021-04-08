@@ -4,6 +4,7 @@ import { AppContext } from '../../store'
 import { UPDATE_DATA, PREVIOUS_PAGE } from '../../store/types'
 import { DataValueInterface } from '../../store/store.interface'
 import { PageControls } from '../PageControls'
+import { SavingsSummary } from '../SavingsSummary'
 import { SavingsControls } from '../SavingsControls'
 import { SavingsChart } from '../SavingsChart'
 import { postCalculation } from '../../api'
@@ -56,6 +57,7 @@ export const Savings: FC = () => {
 
     return (
         <Box>
+            <SavingsSummary />
             <SavingsControls />
             <SavingsChart />
             <PageControls prevPage={prevPage} />

@@ -24,8 +24,8 @@ export const SavingsChart: FC = () => {
                 title='Savings Over time'
                 xAxisData={monthsAxes}
                 yAxisData={state.data.value?.yearlySavings || []}
-                xLabel='Months'
-                yLabel='Amount'
+                xLabel='Years'
+                yLabel='Amount (£)'
             />
         </Card>
     )

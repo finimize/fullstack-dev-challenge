@@ -47,7 +47,7 @@ export const SavingsControls: FC = () => {
                     gridTemplateColumns={{
                         base: '1fr',
                         md: 'repeat(2,1fr)',
-                        xl: 'repeat(4,1fr)',
+                        xl: !isSimpleMode ? 'repeat(4,1fr)' : 'repeat(2,1fr)',
                     }}
                     backgroundColor='blue200'
                     borderRadius='8px'

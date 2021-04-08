@@ -11,6 +11,7 @@ export const StepButton: FC<StepButtonInterface> = ({ selected, label, disabled,
         : {}
     return (
         <Button
+            data-testid={`step-button-${label}`}
             onClick={onClick}
             disabled={disabled || false}
             borderRadius='50%'

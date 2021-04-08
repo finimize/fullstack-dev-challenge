@@ -12,6 +12,25 @@ exports[`component/Savings renders savings component in advanced mode 1`] = `
       <p
         class="chakra-text css-nrvl4t"
       >
+        Savings Summary
+      </p>
+      <p
+        class="chakra-text css-1hgde6q"
+      >
+        Total Savings in 50 years
+      </p>
+      <p
+        class="chakra-text css-nrvl4t"
+      >
+        £ 
+      </p>
+    </div>
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-nrvl4t"
+      >
         Saving controls
       </p>
       <p
@@ -343,6 +362,25 @@ exports[`component/Savings renders savings component in simple mode 1`] = `
       <p
         class="chakra-text css-nrvl4t"
       >
+        Savings Summary
+      </p>
+      <p
+        class="chakra-text css-1hgde6q"
+      >
+        Total Savings in 50 years
+      </p>
+      <p
+        class="chakra-text css-nrvl4t"
+      >
+        £ 
+      </p>
+    </div>
+    <div
+      class="css-6z87o"
+    >
+      <p
+        class="chakra-text css-nrvl4t"
+      >
         Saving controls
       </p>
       <p
@@ -354,7 +392,7 @@ exports[`component/Savings renders savings component in simple mode 1`] = `
         class="css-174mulg"
       >
         <div
-          class="css-lyhr6k"
+          class="css-9d4a7p"
         >
           <div
             class="css-1d1yckv"

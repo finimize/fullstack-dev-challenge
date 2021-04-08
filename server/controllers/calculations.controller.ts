@@ -32,7 +32,7 @@ export const postCalculations: PostCalculationsInterface = (req, res, next) => {
             monthlyContributions=0
         } = req.body;
 
-        let currentSavings = initialSavings;
+        let currentSavings = Number(initialSavings.toFixed(2));
         let yearlySavings: number[] = [currentSavings]
         let yearlyBreakdown = [
             {
@@ -45,8 +45,8 @@ export const postCalculations: PostCalculationsInterface = (req, res, next) => {
             let currentYearSavings: number[] = [];
             for (let month = 1; month <= 12; month+=1) {
                 currentSavings = month % (12/compoundingFrequency) === 0 
-                ? totalSavingsWithInterest(currentSavings, monthlyContributions, interestRate, compoundingFrequency) 
-                : totalSavingsWithoutInterest(currentSavings, monthlyContributions)
+                ? Number(totalSavingsWithInterest(currentSavings, monthlyContributions, interestRate, compoundingFrequency).toFixed(2))
+                : Number(totalSavingsWithoutInterest(currentSavings, monthlyContributions).toFixed(2))
                 currentYearSavings = [
                     ...currentYearSavings,
                     currentSavings

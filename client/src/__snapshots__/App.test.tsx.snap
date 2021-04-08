@@ -20,19 +20,24 @@ exports[`App renders learn react link 1`] = `
         class="css-1rb18jj"
       >
         <button
-          class="chakra-button css-mxlia0"
+          class="chakra-button css-10dvod4"
+          data-testid="step-button-0"
           type="button"
         >
           0
         </button>
         <button
-          class="chakra-button css-mxlia0"
+          class="chakra-button css-1qos78r"
+          data-testid="step-button-1"
+          disabled=""
           type="button"
         >
           1
         </button>
         <button
-          class="chakra-button css-mxlia0"
+          class="chakra-button css-1qos78r"
+          data-testid="step-button-2"
+          disabled=""
           type="button"
         >
           2
