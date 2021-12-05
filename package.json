@@ -3,21 +3,31 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "4.17.1"
+    "cors": "^2.8.5",
+    "express": "4.17.1",
+    "yarn": "^1.22.17"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "ts-node server.ts",
     "types": "tsc",
     "client": "node scripts/start-client.js",
-    "install": "cd client && yarn install && cd .."
+    "install": "cd client && yarn install && cd ..",
+    "test": "mocha -r ts-node/register './**/*.test.ts' --exclude './client/node_modules/**/*.test.ts' --recursive --exit"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.9",
+    "@types/chai": "^4.2.22",
+    "@types/cors": "^2.8.5",
     "@types/express": "^4.17.9",
+    "@types/mocha": "^9.0.0",
+    "@types/mocha-each": "^2.0.0",
     "@types/node": "^14.14.14",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
     "concurrently": "5.3.0",
+    "express-validator": "^6.13.0",
     "mocha": "^8.2.1",
+    "mocha-each": "^2.0.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }
