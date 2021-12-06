@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { Container, Grid, GridItem, Input } from '@chakra-ui/react';
+import { Container, Grid, GridItem, NumberInput, NumberInputField } from '@chakra-ui/react';
 import DefaultLayout from './layouts/Default';
 import LineChart from './LineChart';
 import theme from '../theme';
 import {
     FormControl,
     FormLabel,
-    FormErrorMessage,
     FormHelperText,
 } from '@chakra-ui/react';
 import {
@@ -20,39 +19,73 @@ import {
 
 const defaultTheme = extendTheme(theme);
 
+const baseURL = "http://localhost:3001/calculate-savings-over-time?";
+
 interface GraphData {
     yAxis: Array<number>,
     xAxis: Array<number>,
 };
 
-function CompoundInterestCalculator() {
+interface FormParams {
+    initialDeposit: number,
+    monthlySavings: number,
+    interestRate: number,
+    periodInYears: number,
+}
+
+export function areFormParamsValid(formParams: FormParams): boolean {
+    let key: keyof typeof formParams;
+    for (key in formParams) {
+        if ((isNaN(formParams[key]))) {
+            return false;
+        }
+        let strVal = String(formParams[key])
+        if (strVal[strVal.length-1] === ".") {
+            return false;
+        }
+        if (!formParams[key]) {
+            return false;
+        }
+    }
+    return true;
+};
+
+export function generateQuery(baseURL: string, formParams: FormParams): string {
+    let query = "";
+    let key: keyof typeof formParams;
+    for (key in formParams) {
+        query += `${key}=${encodeURIComponent(formParams[key])}&`
+    }
+
+    return baseURL + query.slice(0, -1);
+}
+
+export function CompoundInterestCalculator() {
     const [data, setData] = useState<GraphData>({
         xAxis: [],
         yAxis: [],
     });
+
     const [formParams, setFormParams] = useState({
-        initialSavings: 1000,
+        initialDeposit: 1000,
         monthlySavings: 200,
         interestRate: 1,
         periodInYears: 50,
     });
 
-    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    function handleInputChange(fieldName: string, value: string | number): void {
         setFormParams({
             ...formParams,
-            [event.target.name]: event.target.value
-        })
-    };
-
-    function handleSliderChangeEnd(value: number): void {
-        setFormParams({
-            ...formParams,
-            interestRate: value
+            [fieldName]: value
         })
     };
 
     useEffect(() => {
-        fetch(`http://localhost:3001/calculate-savings-over-time?initialDeposit=${encodeURIComponent(formParams.initialSavings)}&monthlySavings=${encodeURIComponent(formParams.monthlySavings)}&interestRate=${encodeURIComponent(formParams.interestRate)}&periodInYears=${encodeURIComponent(formParams.periodInYears)}`)
+        if (!areFormParamsValid(formParams)) {
+            return;
+        }
+        const query = generateQuery(baseURL, formParams);
+        fetch(query)
             .then((res) => res.json())
             .then((data) => {
                 setData({
@@ -63,8 +96,6 @@ function CompoundInterestCalculator() {
     }, [formParams]);
     return (
         <ChakraProvider theme={defaultTheme}>
-            {/* We've just bundled everything into one file here to 
-            get you started!*/}
             <DefaultLayout>
                 <Container pt={6}>
                     <LineChart
@@ -76,24 +107,30 @@ function CompoundInterestCalculator() {
                     />
                 </Container>
                 <Container pt={6}>
-                    <FormControl id="initial-savings">
+                    <FormControl>
                         <FormLabel>Initial Savings</FormLabel>
-                        <Input type="number" name="initialSavings" value={formParams.initialSavings} onChange={handleInputChange} />
+                        <NumberInput value={formParams.initialDeposit} onChange={(value) => handleInputChange("initialDeposit", value)}>
+                            <NumberInputField />
+                        </NumberInput>
                         <FormHelperText>Your one time initial savings</FormHelperText>
                     </FormControl>
-                    <FormControl id="monthly-savings" >
+                    <FormControl>
                         <FormLabel>Monthly Savings</FormLabel>
-                        <Input type="number" name="monthlySavings" value={formParams.monthlySavings} onChange={handleInputChange} />
+                        <NumberInput value={formParams.monthlySavings} onChange={(value) => handleInputChange("monthlySavings", value)}>
+                            <NumberInputField />
+                        </NumberInput>
                         <FormHelperText>How much do you wish to save, each month?</FormHelperText>
                     </FormControl>
-                    <FormControl id="interest-rate">
+                    <FormControl>
                         <FormLabel>Interest Rate</FormLabel>
                         <Grid templateColumns="repeat(5, 1fr)" gap={6}>
                             <GridItem colSpan={1}>
-                                <Input type="number" name="interestRate" value={formParams.interestRate} onChange={handleInputChange} />
+                                <NumberInput value={formParams.interestRate} step={0.1} min={0} max={100} onChange={(value) => handleInputChange("interestRate", value)}>
+                                    <NumberInputField />
+                                </NumberInput>
                             </GridItem>
                             <GridItem colSpan={4}>
-                                <Slider aria-label="interest-rate-slider" name="interestRate" value={formParams.interestRate} onChange={handleSliderChangeEnd}>
+                                <Slider aria-label="interest-rate-slider" step={0.1} value={formParams.interestRate} onChange={(value) => handleInputChange("interestRate", value)}>
                                     <SliderTrack>
                                         <SliderFilledTrack />
                                     </SliderTrack>
@@ -109,4 +146,3 @@ function CompoundInterestCalculator() {
     )
 }
 
-export default CompoundInterestCalculator;

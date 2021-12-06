@@ -36,7 +36,7 @@ app.get(
         }
         const initialDeposit = parseInt(req.query.initialDeposit)
         const monthlySavings = parseInt(req.query.monthlySavings)
-        const interestRate = parseInt(req.query.interestRate) / 100
+        const interestRate = parseFloat(req.query.interestRate)/100
         const periodInYears = parseInt(req.query.periodInYears)
 
         const savingsOverTime = calculateSavingsOverTime(periodInYears, initialDeposit, monthlySavings, interestRate)
