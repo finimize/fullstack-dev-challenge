@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@types/chart.js": "^2.9.30"
+    "@types/chart.js": "^2.9.30",
+    "jest-fetch-mock": "^3.0.3"
   }
 }
