@@ -20,6 +20,7 @@
       "target": "es6",
       "moduleResolution": "node",
       "types": [
+        "jest",
         "node"
       ],
       "typeRoots": [
