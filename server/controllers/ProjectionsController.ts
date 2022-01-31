@@ -24,7 +24,7 @@ class ProjectionsController {
     try {
       const projections = ProjectionsService.getProjected50YearSavingsPerMonth({
         initialSavings: parseInt(initialSavings),
-        interestRate: parseInt(interestRate),
+        interestRate: parseFloat(interestRate),
         monthlyDeposit: parseInt(monthlyDeposit),
       });
       // @ts-ignore:next-line
