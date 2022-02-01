@@ -15,7 +15,7 @@ const SliderWithOverride = ({ label, ...rest }: Props) => {
 
     return (
         <Box width="100%">
-            <Flex justify="space-between">
+            <Flex justify="space-between" py="2">
                 {!!label && <Text align="left">{label}</Text>}
                 <EditIcon w={5} h={5} onClick={handleClick} />
             </Flex>
