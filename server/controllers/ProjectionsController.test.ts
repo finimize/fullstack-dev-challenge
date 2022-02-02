@@ -1,5 +1,5 @@
-// @ts-nocheck
 import "jest";
+import type { Response } from "express";
 import ProjectionsService from "../services/ProjectionsService";
 import { ProjectionsController } from ".";
 
@@ -9,7 +9,7 @@ const mockedProjectionsService = ProjectionsService as jest.Mocked<
   typeof ProjectionsService
 >;
 const mockGetProjected = jest.fn();
-mockedProjectionsService.getProjected50YearSavingsPerMonth = mockGetProjected;
+mockedProjectionsService.getProjectedYearSavingsPerMonth = mockGetProjected;
 
 const mockRequest = (queryData: {
   initialSavings: string;
@@ -21,7 +21,7 @@ const mockRequest = (queryData: {
   };
 };
 const mockResponse = () => {
-  const res = {};
+  const res: Response | any = {};
   res.status = jest.fn().mockReturnValue(res);
   res.json = jest.fn().mockReturnValue(res);
   return res;

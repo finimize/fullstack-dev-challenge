@@ -1,23 +1,19 @@
-import type { NextFunction } from "express";
+import type { Response, NextFunction } from "express";
 import { validationResult } from "express-validator";
 import { ProjectionsService } from "../services";
-import type {
-  GetProjectionsAPIRequest,
-  GetProjectionsAPIResponse,
-} from "../types";
+import type { GetProjectionsAPIRequest } from "../types";
 
 const DEFAULT_YEARS = "50";
 
 class ProjectionsController {
   async getProjections(
     req: GetProjectionsAPIRequest,
-    res: GetProjectionsAPIResponse,
+    res: Response,
     next: NextFunction
   ) {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      // @ts-ignore:next-line
       return res.status(400).json({ errors: errors.array() });
     }
 
@@ -35,7 +31,6 @@ class ProjectionsController {
         monthlyDeposit: parseInt(monthlyDeposit),
         years: parseInt(years),
       });
-      // @ts-ignore:next-line
       return res.status(200).json({ data: projections });
     } catch (error) {
       next(error);

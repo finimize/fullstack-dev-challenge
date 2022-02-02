@@ -1,17 +1,22 @@
-// @ts-nocheck
 import React, { useState } from 'react'
-import { SliderProps, Box, Flex } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import { EditIcon } from '@chakra-ui/icons'
 import Slider from './Slider'
 import NumberInput from './NumberInput'
 import TextWithTag from './TextWithTag'
 
-type Props = SliderProps & {
+type Props = {
+    value: number
     label?: string
     valueText?: string
+    name: string
+    min: number
+    max: number
+    step: number
+    onChange: (newValue: number | string) => void
 }
 
-const SliderWithOverride = ({ label, valueText, ...rest }: Props) => {
+const SliderWithOverride = ({ value, label, valueText, name, min, max, step, onChange }: Props) => {
     const [override, setOverride] = useState(false)
     const handleClick = () => setOverride(!override)
 
@@ -21,8 +26,19 @@ const SliderWithOverride = ({ label, valueText, ...rest }: Props) => {
                 {!!label && !!valueText && <TextWithTag label={label} valueText={valueText} />}
                 <EditIcon w={5} h={5} onClick={handleClick} />
             </Flex>
-            {!override && <Slider {...rest} />}
-            {override && <NumberInput {...rest} />}
+            {!override && (
+                <Slider
+                    value={value}
+                    name={name}
+                    min={min}
+                    max={max}
+                    step={step}
+                    onChange={onChange}
+                />
+            )}
+            {override && (
+                <NumberInput value={value} min={min} max={max} step={step} onChange={onChange} />
+            )}
         </Box>
     )
 }

@@ -2,9 +2,10 @@ import React from 'react'
 import { Heading } from '@chakra-ui/react'
 import TextWithTag from './TextWithTag'
 import { numberFormatter, SAVINGS_DEFAULTS } from '../lib'
+import type { ISavingsResults } from '../lib'
 
 type Props = {
-    savingsTotals: { totalSaved: number; totalInvested: number; interestEarned: number }
+    savingsTotals: ISavingsResults
 }
 
 const SavingsResults = ({ savingsTotals }: Props) => (

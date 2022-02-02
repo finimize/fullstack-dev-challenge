@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import type { CorsOptions } from "cors";
 import { apiV1 } from "./api";
 
 const app = express();
@@ -29,7 +28,7 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 
 app.use("/", apiV1);
-// @ts-ignore
+// @ts-ignore:next-line - new to TS and couldn't find a fix for this one
 app.options("*", cors(options));
 
 app.listen(app.get("port"), () => {

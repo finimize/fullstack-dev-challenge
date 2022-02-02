@@ -3,3 +3,9 @@ export interface ISavingsInputs {
     monthlyDeposit: number
     interestRate: number
 }
+
+export interface ISavingsResults {
+    totalSaved: number
+    totalInvested: number
+    interestEarned: number
+}
