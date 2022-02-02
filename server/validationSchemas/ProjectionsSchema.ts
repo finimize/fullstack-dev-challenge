@@ -16,6 +16,10 @@ const projectionSchema: Schema = {
     isNumeric: true,
     errorMessage: "monthlyDeposit field cannot be empty",
   },
+  years: {
+    isNumeric: true,
+    errorMessage: "Years field must be a number, if provided",
+  },
 };
 
 export default projectionSchema;

@@ -1,4 +1,20 @@
 const theme = {
+    components: {
+        Heading: {
+            variants: {
+                h1: {
+                    fontSize: '2xl',
+                    fontWeight: 'bold',
+                    color: 'blueHeader',
+                },
+                h2: {
+                    fontSize: 'xl',
+                    fontWeight: 'bold',
+                    color: 'blueHeader',
+                },
+            },
+        },
+    },
     colors: {
         transparent: 'transparent',
         white: '#fff',
@@ -35,6 +51,7 @@ const theme = {
         md: '16px',
         lg: '18px',
         xl: '20px',
+        '2xl': '25px',
     },
     fontWeights: {
         normal: 400,

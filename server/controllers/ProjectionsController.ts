@@ -6,6 +6,8 @@ import type {
   GetProjectionsAPIResponse,
 } from "../types";
 
+const DEFAULT_YEARS = "50";
+
 class ProjectionsController {
   async getProjections(
     req: GetProjectionsAPIRequest,
@@ -19,13 +21,19 @@ class ProjectionsController {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { initialSavings, interestRate, monthlyDeposit } = req.query;
+    const {
+      initialSavings,
+      interestRate,
+      monthlyDeposit,
+      years = DEFAULT_YEARS,
+    } = req.query;
 
     try {
-      const projections = ProjectionsService.getProjected50YearSavingsPerMonth({
+      const projections = ProjectionsService.getProjectedYearSavingsPerMonth({
         initialSavings: parseInt(initialSavings),
         interestRate: parseFloat(interestRate),
         monthlyDeposit: parseInt(monthlyDeposit),
+        years: parseInt(years),
       });
       // @ts-ignore:next-line
       return res.status(200).json({ data: projections });

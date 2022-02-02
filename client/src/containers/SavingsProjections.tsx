@@ -1,108 +1,100 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Flex, Heading, VStack } from '@chakra-ui/react'
+import { Flex, Heading, VStack } from '@chakra-ui/react'
 import debounce from 'lodash/debounce'
 
-import SliderWithOverride from '../components/SliderWithOverride'
 import LineChart from '../components/LineChart'
 import DefaultLayout from '../components/layouts/Default'
-import { fetchData, createQueryString } from '../lib'
+import SavingsSelectors from '../components/SavingsSelectors'
+import SavingsResults from '../components/SavingsResults'
+import {
+    fetchData,
+    createQueryString,
+    appendYearsQuery,
+    extractYearlyData,
+    SAVINGS_DEFAULTS,
+} from '../lib'
+import type { ISavingsInputs } from '../lib'
 
 const SavingsProjections = () => {
     const [data, setData] = useState<{ xAxis: number[]; yAxis: number[] }>({
         xAxis: [],
         yAxis: [],
     })
-    const [formInputs, setFormInputs] = useState({
-        initialSavings: 5000,
-        monthlyDeposit: 100,
-        interestRate: 2.0,
+    const [savingsInputs, setSavingsInputs] = useState({
+        initialSavings: SAVINGS_DEFAULTS.INITIAL_DEFAULT,
+        monthlyDeposit: SAVINGS_DEFAULTS.MONTHLY_DEFAULT,
+        interestRate: SAVINGS_DEFAULTS.INTEREST_DEFAULT,
     })
-    // @ts-ignore:next-line
-    const getProjectionsData = async (values): Promise<void> => {
-        const queryString = createQueryString(values)
+    const [savingsTotals, setSavingsTotals] = useState({
+        totalSaved: 0,
+        totalInvested: 0,
+        interestEarned: 0,
+    })
+
+    const getProjectionsData = async (values?: ISavingsInputs): Promise<void> => {
+        const savingsValues = values || savingsInputs
+        const queryString = appendYearsQuery(createQueryString(savingsValues))
         try {
-            const projections = await fetchData(`/v1/projections?${queryString}`)
-            // @ts-ignore:next-line
-            setData({ xAxis: [...Array(projections.length).keys()], yAxis: projections })
+            const data = await fetchData(`/v1/projections?${queryString}`)
+            const { savings, totalInvested, interestEarned } = data
+            const yearlyProjections = extractYearlyData(savings)
+            setData({ xAxis: [...yearlyProjections.keys()], yAxis: yearlyProjections })
+            setSavingsTotals({
+                totalSaved: savings[savings.length - 1],
+                totalInvested,
+                interestEarned,
+            })
         } catch (err) {
             console.log(err)
         }
     }
 
     useEffect(() => {
-        // We don't want to fetch data if the user is still typing the rate e.g. "1."
-        // @ts-ignore:next-line
-        if (typeof formInputs.interestRate !== 'string' || !formInputs.interestRate.endsWith('.')) {
-            getProjectionsData(formInputs)
-        }
+        getProjectionsData()
     }, [])
 
-    const [stateDebounceGetProjectionsData] = useState(() =>
-        debounce(getProjectionsData, 300, {
-            leading: false,
-            trailing: true,
-        })
-    )
-    // @ts-ignore:next-line
-    const handleChangeUsingStateDebounce = (formInput) => (newValue) => {
-        setFormInputs({ ...formInputs, [formInput]: newValue })
-        // @ts-ignore:next-line
-        stateDebounceGetProjectionsData({ ...formInputs, [formInput]: newValue })
-    }
+    const [stateDebounceGetProjectionsData] = useState(() => debounce(getProjectionsData, 300))
+
+    const handleChangeUsingStateDebounce =
+        (savingsInput: string) => (newValue: number | string) => {
+            // We don't want to fetch data if the user is still typing after using a decimal point e.g. "1."
+            if (newValue !== 'string' || !newValue.endsWith('.')) {
+                setSavingsInputs({ ...savingsInputs, [savingsInput]: newValue })
+                stateDebounceGetProjectionsData({ ...savingsInputs, [savingsInput]: newValue })
+            }
+        }
 
     return (
         <DefaultLayout>
             <Flex
                 flexWrap="wrap"
-                flexDir="row"
-                justifyContent="space-around"
-                alignItems="center"
+                justifyContent="space-evenly"
                 width="100%"
-                maxW="1400px"
+                my={20}
                 marginX="auto"
                 marginY="auto"
             >
-                <VStack spacing={4} mx="30px" my="50px">
-                    <Heading as="h1" paddingBottom="20px" color="#094067">
-                        Interest Rate Calculator
-                    </Heading>
-                    <SliderWithOverride
-                        value={formInputs.initialSavings}
-                        label={`Initial savings £${formInputs.initialSavings}`}
-                        name="initialSavings"
-                        min={0}
-                        max={200000}
-                        step={1000}
-                        onChange={handleChangeUsingStateDebounce('initialSavings')}
-                    />
-                    <SliderWithOverride
-                        value={formInputs.monthlyDeposit}
-                        label={`Monthly deposit £${formInputs.monthlyDeposit}`}
-                        name="monthlyDeposit"
-                        min={0}
-                        max={1000}
-                        step={10}
-                        onChange={handleChangeUsingStateDebounce('monthlyDeposit')}
-                    />
-                    <SliderWithOverride
-                        value={formInputs.interestRate}
-                        label={`Monthly Interest Rate ${formInputs.interestRate}%`}
-                        name="interestRate"
-                        min={0.0}
-                        max={20.0}
-                        step={0.1}
-                        onChange={handleChangeUsingStateDebounce('interestRate')}
-                    />
-                </VStack>
-                <Container w="100%" maxW="900px" mx="20px">
+                <Flex flexGrow={2}>
+                    <VStack spacing={4} ml={20}>
+                        <Heading as="h1" variant="h1" paddingBottom="20px">
+                            Compound interest projections
+                        </Heading>
+                        <SavingsSelectors
+                            savingsInputs={savingsInputs}
+                            handleChange={handleChangeUsingStateDebounce}
+                        />
+                        <SavingsResults savingsTotals={savingsTotals} />
+                    </VStack>
+                </Flex>
+                <Flex flexGrow={3} minW={500}>
                     <LineChart
                         title="Savings Over time"
                         xAxisData={data.xAxis}
                         yAxisData={data.yAxis}
-                        xLabel="Months"
-                        yLabel="Amount"
+                        xLabel="Years"
+                        yLabel="Amount [£]"
                     />
-                </Container>
+                </Flex>
             </Flex>
         </DefaultLayout>
     )

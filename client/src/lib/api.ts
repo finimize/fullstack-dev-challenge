@@ -1,8 +1,10 @@
 const BASE_URL = 'http://localhost:3001'
 
-export const fetchData = async (apiUrl: string): Promise<number[]> => {
+export const fetchData = async (
+    apiUrl: string
+): Promise<{ savings: number[]; totalInvested: number; interestEarned: number }> => {
     const url = BASE_URL + apiUrl
-    const response = await window.fetch(url, {
+    const response = await fetch(url, {
         method: 'GET',
         headers: {
             'content-type': 'application/json;charset=UTF-8',
@@ -10,7 +12,7 @@ export const fetchData = async (apiUrl: string): Promise<number[]> => {
     })
 
     type JSONResponse = {
-        data?: number[]
+        data?: { savings: number[]; totalInvested: number; interestEarned: number }
         errors?: Array<{ message: string }>
     }
     const { data, errors }: JSONResponse = await response.json()

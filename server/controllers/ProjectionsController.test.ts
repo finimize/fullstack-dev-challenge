@@ -54,13 +54,18 @@ describe("ProjectionsController", () => {
     });
 
     it("responds with expected success status and data", async () => {
-      mockGetProjected.mockReturnValue([5000, 6000]);
+      const mockData = {
+        savings: [5000, 6000],
+        totalInvested: 10000,
+        interestEarned: 1000,
+      };
+      mockGetProjected.mockReturnValue(mockData);
       await controller.getProjections(req, res, next);
 
       expect(res.status).toHaveBeenCalledTimes(1);
       expect(res.status).toHaveBeenCalledWith(200);
       expect(res.json).toHaveBeenCalledTimes(1);
-      expect(res.json).toHaveBeenCalledWith({ data: [5000, 6000] });
+      expect(res.json).toHaveBeenCalledWith({ data: mockData });
     });
 
     describe("when an unknown error is thrown", () => {

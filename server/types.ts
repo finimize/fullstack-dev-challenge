@@ -12,6 +12,7 @@ export type GetProjectionsAPIRequest = TypedRequestQuery<{
   initialSavings: string;
   interestRate: string;
   monthlyDeposit: string;
+  years?: string;
 }>;
 
 export type GetProjectionsAPIResponse = TypedResponse<{
