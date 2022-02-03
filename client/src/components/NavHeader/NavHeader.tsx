@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Image } from '@chakra-ui/react'
-import images from '../images'
+import images from '../../images'
 
 const NavHeader = () => (
     <Box

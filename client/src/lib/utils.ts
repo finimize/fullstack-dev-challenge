@@ -1,3 +1,4 @@
+import type { ChartTooltipItem } from 'chart.js'
 import { SAVINGS_DEFAULTS } from './constants'
 
 export const createQueryString = (queries: { [key: string]: any }): string =>
@@ -15,3 +16,10 @@ export const numberFormatter = new Intl.NumberFormat('gb-GB', {
     style: 'currency',
     currency: 'GBP',
 })
+
+export const getTooltipTitle = (tooltipItems: ChartTooltipItem[]) => `Year ${tooltipItems[0].label}`
+
+export const getTooltipLabel = (tooltipItem: ChartTooltipItem) => {
+    const value = tooltipItem.value ? parseFloat(tooltipItem.value) : 0
+    return numberFormatter.format(value)
+}

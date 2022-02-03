@@ -1,7 +1,7 @@
 import React from 'react'
-import SliderWithOverride from '../components/SliderWithOverride'
-import { numberFormatter, SAVINGS_DEFAULTS } from '../lib'
-import type { ISavingsInputs } from '../lib'
+import SliderWithOverride from '../SliderWithOverride'
+import { numberFormatter, SAVINGS_DEFAULTS } from '../../lib'
+import type { ISavingsInputs } from '../../lib'
 
 type Props = {
     savingsInputs: ISavingsInputs
@@ -19,6 +19,7 @@ const SavingsSelectors = ({ savingsInputs, handleChange }: Props) => (
             max={SAVINGS_DEFAULTS.INITIAL_MAX}
             step={SAVINGS_DEFAULTS.INITIAL_STEP}
             onChange={handleChange('initialSavings')}
+            ariaLabel="slider-savings"
         />
         <SliderWithOverride
             value={savingsInputs.monthlyDeposit}
@@ -29,6 +30,7 @@ const SavingsSelectors = ({ savingsInputs, handleChange }: Props) => (
             max={SAVINGS_DEFAULTS.MONTHLY_MAX}
             step={SAVINGS_DEFAULTS.MONTHLY_STEP}
             onChange={handleChange('monthlyDeposit')}
+            ariaLabel="slider-monthly"
         />
         <SliderWithOverride
             value={savingsInputs.interestRate}
@@ -39,6 +41,7 @@ const SavingsSelectors = ({ savingsInputs, handleChange }: Props) => (
             max={SAVINGS_DEFAULTS.INTEREST_MAX}
             step={SAVINGS_DEFAULTS.INTEREST_STEP}
             onChange={handleChange('interestRate')}
+            ariaLabel="slider-interest"
         />
     </>
 )

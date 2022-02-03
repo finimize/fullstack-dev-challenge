@@ -1,9 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import { screen } from '@testing-library/react'
+import { renderForTest, mockLineChart } from './test'
+import App from './App'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+jest.mock('./components/LineChart')
+
+test('renders successfully and shows title', () => {
+    mockLineChart()
+
+    renderForTest(<App />)
+
+    expect(screen.getByText('Compound interest projections')).toBeInTheDocument()
+})

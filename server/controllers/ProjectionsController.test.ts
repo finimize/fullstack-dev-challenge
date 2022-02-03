@@ -35,6 +35,7 @@ describe("ProjectionsController", () => {
       initialSavings: "1000",
       interestRate: "5",
       monthlyDeposit: "50",
+      years: "50",
     };
     const req = mockRequest(queryData);
     const res = mockResponse();
@@ -42,7 +43,7 @@ describe("ProjectionsController", () => {
 
     afterEach(jest.clearAllMocks);
 
-    it("calls ProjectionsService.getProjected50YearSavingsPerMonth", async () => {
+    it("calls ProjectionsService.getProjectedYearSavingsPerMonth", async () => {
       await controller.getProjections(req, res, next);
 
       expect(mockGetProjected).toHaveBeenCalledTimes(1);
@@ -50,6 +51,7 @@ describe("ProjectionsController", () => {
         initialSavings: 1000,
         interestRate: 5,
         monthlyDeposit: 50,
+        years: 50,
       });
     });
 

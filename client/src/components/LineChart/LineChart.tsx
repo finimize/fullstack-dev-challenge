@@ -1,8 +1,8 @@
 import { ChartLegendOptions, ChartOptions } from 'chart.js'
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-import theme from '../theme'
-import { numberFormatter } from '../lib'
+import theme from '../../theme'
+import { getTooltipTitle, getTooltipLabel } from '../../lib'
 
 type Props = {
     xAxisData: number[] | string[]
@@ -43,13 +43,8 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
             titleFontSize: 16,
             bodyFontSize: 14,
             callbacks: {
-                title: (tooltipItem) => {
-                    return `Year ${tooltipItem[0].label}`
-                },
-                label: (tooltipItem) => {
-                    const value = tooltipItem.value ? parseFloat(tooltipItem.value) : 0
-                    return numberFormatter.format(value)
-                },
+                title: (tooltipItems) => getTooltipTitle(tooltipItems),
+                label: (tooltipItem) => getTooltipLabel(tooltipItem),
             },
         },
     }

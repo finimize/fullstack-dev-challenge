@@ -7,7 +7,7 @@ import {
     NumberDecrementStepper,
     NumberInputProps,
 } from '@chakra-ui/react'
-import theme from '../theme'
+import theme from '../../theme'
 
 const NumberInput = (props: NumberInputProps) => (
     <ChakraNumberInput errorBorderColor={theme.colors.danger} {...props}>

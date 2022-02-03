@@ -1,8 +1,8 @@
 import React from 'react'
 import { Heading } from '@chakra-ui/react'
-import TextWithTag from './TextWithTag'
-import { numberFormatter, SAVINGS_DEFAULTS } from '../lib'
-import type { ISavingsResults } from '../lib'
+import TextWithTag from '../TextWithTag'
+import { numberFormatter, SAVINGS_DEFAULTS } from '../../lib'
+import type { ISavingsResults } from '../../lib'
 
 type Props = {
     savingsTotals: ISavingsResults

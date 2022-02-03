@@ -1,5 +1,6 @@
 const BASE_URL = 'http://localhost:3001'
 
+// TODO: Ideally the types in this function would be more generic to allow for reuse
 export const fetchData = async (
     apiUrl: string
 ): Promise<{ savings: number[]; totalInvested: number; interestEarned: number }> => {
@@ -16,6 +17,7 @@ export const fetchData = async (
         errors?: Array<{ message: string }>
     }
     const { data, errors }: JSONResponse = await response.json()
+
     if (response.ok && data) {
         return Promise.resolve(data)
     } else {
