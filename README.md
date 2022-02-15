@@ -27,8 +27,6 @@ The app must satisfy the following Acceptance Criteria (ACs):
 * All calculations must take place server-side, and all monthly projection data should be returned via an endpoint
 * The calculations must be triggered onChange of any input, to give live feedback on the input data. The performance (try the slider) should be reasonable.
 
-Since we are currently looking for someone to push up the standard of our product/UX - please spend some time making improvements in this regard. This doesn't have to be anything too flashy - just any opportunities you can see to make the product cleaner/more engaging/slicker.
-
 ### Our Guidance
 
 The challenge should not take any more than 2-4 hours. You do not need to complete the challenge in one go.
