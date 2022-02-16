@@ -29,7 +29,7 @@ The app must satisfy the following Acceptance Criteria (ACs):
 
 ### Our Guidance
 
-The challenge should not take any more than 2-4 hours. You do not need to complete the challenge in one go.
+The challenge should not take any more than 2-3 hours. You do not need to complete the challenge in one go.
 
 These are some qualities we value:
  * Well-modularised, robust and clearly-written code
