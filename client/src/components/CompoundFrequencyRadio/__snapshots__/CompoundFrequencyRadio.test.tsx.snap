@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/CompoundFrequencyRadio renders Calculator Mode component 1`] = `
+<div>
+   
+  <div
+    class="css-uarar0"
+    data-testid="cfr-radio-input"
+  >
+    <label
+      class="chakra-form__label css-wuh3rg"
+    >
+      Interest Frequency
+    </label>
+    <div
+      class="css-171bmva"
+      role="radiogroup"
+    >
+      <label
+        class="css-l75mtb"
+      >
+        <input
+          checked=""
+          data-testid="cfr-annually"
+          name="framework"
+          style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+          type="radio"
+          value="annually"
+        />
+        <div
+          aria-hidden="true"
+          class="css-15px1hi"
+          data-checked=""
+        >
+          annually
+        </div>
+      </label>
+      <label
+        class="css-l75mtb"
+      >
+        <input
+          data-testid="cfr-quarterly"
+          name="framework"
+          style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+          type="radio"
+          value="quarterly"
+        />
+        <div
+          aria-hidden="true"
+          class="css-15px1hi"
+        >
+          quarterly
+        </div>
+      </label>
+      <label
+        class="css-l75mtb"
+      >
+        <input
+          data-testid="cfr-monthly"
+          name="framework"
+          style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+          type="radio"
+          value="monthly"
+        />
+        <div
+          aria-hidden="true"
+          class="css-15px1hi"
+        >
+          monthly
+        </div>
+      </label>
+    </div>
+  </div>
+   
+   
+</div>
+`;

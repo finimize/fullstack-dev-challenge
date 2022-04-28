@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/Savings Controls renders Header component 1`] = `
+<div>
+   
+  <div
+    class="css-yf46qw"
+  >
+    <div
+      class="css-1rb18jj"
+    >
+      <button
+        class="chakra-button css-10dvod4"
+        data-testid="step-button-0"
+        type="button"
+      >
+        0
+      </button>
+      <button
+        class="chakra-button css-1qos78r"
+        data-testid="step-button-1"
+        disabled=""
+        type="button"
+      >
+        1
+      </button>
+      <button
+        class="chakra-button css-1qos78r"
+        data-testid="step-button-2"
+        disabled=""
+        type="button"
+      >
+        2
+      </button>
+    </div>
+    <p
+      class="chakra-text css-1wvvwig"
+    >
+      Let's start the savings...
+    </p>
+  </div>
+   
+   
+</div>
+`;

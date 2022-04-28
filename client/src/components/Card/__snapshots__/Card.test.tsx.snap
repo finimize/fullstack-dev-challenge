@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Card renders the Card Component with a child 1`] = `
+<div>
+  <div
+    class="css-mqjv2r"
+  >
+    <div>
+      Hello
+    </div>
+  </div>
+</div>
+`;

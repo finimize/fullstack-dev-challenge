@@ -1,22 +1,32 @@
 import { ChartLegendOptions, ChartOptions } from 'chart.js'
-import React from 'react'
+import React, { FC } from 'react'
 import { Line } from 'react-chartjs-2'
-import theme from '../theme'
+import { theme } from '../../theme'
 
 type Props = {
-    xAxisData: number[] | string[]
+    xAxisData: number[]
     yAxisData: number[]
     title?: string
     xLabel?: string
     yLabel?: string
 }
 
-const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
+export const LineChart: FC<Props> = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
     const legendOptions: ChartLegendOptions = {
         display: false,
     }
 
+    /* istanbul ignore next */
     const options: ChartOptions = {
+        tooltips: {
+            callbacks: {
+                title: (tooltipItem) => {
+                    const year = Math.floor(Number(tooltipItem[0].xLabel))
+                    const month = (Number(tooltipItem[0].xLabel) * 12) % 12
+                    return `Year ${year}, Month ${month}`
+                },
+            },
+        },
         title: {
             display: !!title,
             text: title,
@@ -32,8 +42,15 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
             xAxes: [
                 {
                     scaleLabel: { display: !!xLabel, labelString: xLabel },
-                    ticks: { display: true },
+                    ticks: {
+                        display: true,
+                        callback: (value) => (Number.isInteger(value) ? value : undefined),
+                        stepSize: 12,
+                        autoSkip: true,
+                        maxTicksLimit: 20,
+                    },
                     gridLines: { display: false },
+                    distribution: 'series',
                 },
             ],
         },
@@ -48,6 +65,7 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
                         backgroundColor: theme.colors.blue100,
                         borderColor: theme.colors.primary,
                         data: yAxisData,
+                        steppedLine: true,
                     },
                 ],
             }}
@@ -56,5 +74,3 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
         />
     )
 }
-
-export default LineChart

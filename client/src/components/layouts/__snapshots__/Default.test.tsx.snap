@@ -1,0 +1,547 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/Default Layout renders page 1 1`] = `
+<div>
+   
+  <div
+    class="css-2e097b"
+  >
+    <div
+      class="css-1tmkavh"
+    >
+      <img
+        alt="Finimize"
+        class="chakra-image__placeholder css-u4ybgy"
+      />
+    </div>
+    <div
+      class="css-yf46qw"
+    >
+      <div
+        class="css-1rb18jj"
+      >
+        <button
+          class="chakra-button css-10dvod4"
+          data-testid="step-button-0"
+          type="button"
+        >
+          0
+        </button>
+        <button
+          class="chakra-button css-1qos78r"
+          data-testid="step-button-1"
+          disabled=""
+          type="button"
+        >
+          1
+        </button>
+        <button
+          class="chakra-button css-1qos78r"
+          data-testid="step-button-2"
+          disabled=""
+          type="button"
+        >
+          2
+        </button>
+      </div>
+      <p
+        class="chakra-text css-1wvvwig"
+      >
+        Let's start the savings...
+      </p>
+    </div>
+    <div
+      class="css-0"
+    >
+      <div
+        class="css-6z87o"
+      >
+        <p
+          class="chakra-text css-18cdwwf"
+        >
+          Tell us a little about yourself
+        </p>
+        <p
+          class="chakra-text css-ut9id6"
+        >
+          To help you get the most out of your savings and personalise this expereinces for please provide us with a few details to really help you maximise your savings and help you get to a brighter fanciancial future!
+        </p>
+        <div
+          class="css-v8qn0c"
+        >
+          <div
+            class="css-1d1yckv"
+          >
+            <label
+              class="chakra-form__label css-wuh3rg"
+            >
+              First Name
+            </label>
+            <input
+              class="chakra-input css-1ttok2p"
+              data-testid="input-First Name"
+              value=""
+            />
+            <p
+              class="chakra-text css-80ht2y"
+            />
+          </div>
+          <div
+            class="css-1d1yckv"
+          >
+            <label
+              class="chakra-form__label css-wuh3rg"
+            >
+              Last Name
+            </label>
+            <input
+              class="chakra-input css-1ttok2p"
+              data-testid="input-Last Name"
+              value=""
+            />
+            <p
+              class="chakra-text css-80ht2y"
+            />
+          </div>
+          <div
+            class="css-1d1yckv"
+          >
+            <label
+              class="chakra-form__label css-wuh3rg"
+            >
+              Email
+            </label>
+            <input
+              class="chakra-input css-1ttok2p"
+              data-testid="input-Email"
+              value=""
+            />
+            <p
+              class="chakra-text css-80ht2y"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-j4xgao"
+      >
+        <button
+          class="chakra-button css-1mi4eb0"
+          data-testid="next-button"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+   
+   
+</div>
+`;
+
+exports[`component/Default Layout renders page 2 1`] = `
+<div>
+   
+  <div
+    class="css-2e097b"
+  >
+    <div
+      class="css-1tmkavh"
+    >
+      <img
+        alt="Finimize"
+        class="chakra-image__placeholder css-u4ybgy"
+      />
+    </div>
+    <div
+      class="css-yf46qw"
+    >
+      <div
+        class="css-1rb18jj"
+      >
+        <button
+          class="chakra-button css-mxlia0"
+          data-testid="step-button-0"
+          type="button"
+        >
+          0
+        </button>
+        <button
+          class="chakra-button css-1im50uq"
+          data-testid="step-button-1"
+          disabled=""
+          type="button"
+        >
+          1
+        </button>
+        <button
+          class="chakra-button css-1qos78r"
+          data-testid="step-button-2"
+          disabled=""
+          type="button"
+        >
+          2
+        </button>
+      </div>
+      <p
+        class="chakra-text css-1wvvwig"
+      >
+        Let's start the savings...
+      </p>
+    </div>
+    <div
+      class="css-0"
+    >
+      <div
+        class="css-6z87o"
+      >
+        <p
+          class="chakra-text css-nrvl4t"
+        >
+          Choose how you want to see your savings
+        </p>
+        <p
+          class="chakra-text css-ulf43m"
+        >
+          Hi 
+          <em />
+           Choose one of the options below to to see how much money you can save:
+        </p>
+        <div
+          class="css-1wlqeol"
+        >
+          <div
+            class="css-ocze9x"
+            role="radiogroup"
+          >
+            <label
+              class="css-k008qs"
+            >
+              <input
+                checked=""
+                data-testid="Simple"
+                name="framework"
+                style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                type="radio"
+                value="Simple"
+              />
+              <div
+                aria-hidden="true"
+                class="css-1r0ytuv"
+                data-checked=""
+              >
+                Simple
+              </div>
+            </label>
+            <label
+              class="css-k008qs"
+            >
+              <input
+                data-testid="Advanced"
+                name="framework"
+                style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                type="radio"
+                value="Advanced"
+              />
+              <div
+                aria-hidden="true"
+                class="css-1r0ytuv"
+              >
+                Advanced
+              </div>
+            </label>
+          </div>
+          <div
+            class="css-olyig7"
+          >
+            <p
+              class="chakra-text css-8om1m1"
+            >
+              This will allow you to see excatly how much your money will grow over time as soon as you make your first deposit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-jo7bsi"
+      >
+        <button
+          class="chakra-button css-a7myp6"
+          data-testid="previous-button"
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          class="chakra-button css-1mi4eb0"
+          data-testid="next-button"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+   
+   
+</div>
+`;
+
+exports[`component/Default Layout renders page 3 1`] = `
+<div>
+   
+  <div
+    class="css-2e097b"
+  >
+    <div
+      class="css-1tmkavh"
+    >
+      <img
+        alt="Finimize"
+        class="chakra-image__placeholder css-u4ybgy"
+      />
+    </div>
+    <div
+      class="css-yf46qw"
+    >
+      <div
+        class="css-1rb18jj"
+      >
+        <button
+          class="chakra-button css-mxlia0"
+          data-testid="step-button-0"
+          type="button"
+        >
+          0
+        </button>
+        <button
+          class="chakra-button css-1qos78r"
+          data-testid="step-button-1"
+          disabled=""
+          type="button"
+        >
+          1
+        </button>
+        <button
+          class="chakra-button css-1im50uq"
+          data-testid="step-button-2"
+          disabled=""
+          type="button"
+        >
+          2
+        </button>
+      </div>
+      <p
+        class="chakra-text css-1wvvwig"
+      >
+        Let's start the savings...
+      </p>
+    </div>
+    <div
+      class="css-0"
+    >
+      <div
+        class="css-6z87o"
+      >
+        <p
+          class="chakra-text css-nrvl4t"
+        >
+          Savings Summary
+        </p>
+        <p
+          class="chakra-text css-1hgde6q"
+        >
+          Total Savings in 50 years
+        </p>
+        <p
+          class="chakra-text css-nrvl4t"
+        >
+          £ 
+        </p>
+      </div>
+      <div
+        class="css-6z87o"
+      >
+        <p
+          class="chakra-text css-nrvl4t"
+        >
+          Saving controls
+        </p>
+        <p
+          class="chakra-text css-ulf43m"
+        >
+          Simply change the values below to see your results
+        </p>
+        <div
+          class="css-174mulg"
+        >
+          <div
+            class="css-9d4a7p"
+          >
+            <div
+              class="css-1d1yckv"
+            >
+              <label
+                class="chakra-form__label css-wuh3rg"
+              >
+                Initial Deposit
+              </label>
+              <div
+                class="css-ylxpfg"
+                value="10"
+              >
+                <input
+                  aria-invalid="false"
+                  aria-valuemax="9007199254740991"
+                  aria-valuemin="0"
+                  aria-valuenow="10"
+                  aria-valuetext="10"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class="css-1ttok2p"
+                  data-testid="input-Initial Deposit"
+                  inputmode="decimal"
+                  pattern="[0-9]*(.[0-9]+)?"
+                  role="spinbutton"
+                  type="text"
+                  value="10"
+                />
+                <div
+                  aria-hidden="true"
+                  class="css-1rscer7"
+                >
+                  <div
+                    class="css-9pjy17"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    <svg
+                      class="chakra-icon css-onkibi"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12.8,5.4c-0.377-0.504-1.223-0.504-1.6,0l-9,12c-0.228,0.303-0.264,0.708-0.095,1.047 C2.275,18.786,2.621,19,3,19h18c0.379,0,0.725-0.214,0.895-0.553c0.169-0.339,0.133-0.744-0.095-1.047L12.8,5.4z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="css-9pjy17"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    <svg
+                      class="chakra-icon css-onkibi"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p
+                class="chakra-text css-80ht2y"
+              />
+            </div>
+            <div
+              class="css-uarar0"
+            >
+              <label
+                class="chakra-form__label css-wuh3rg"
+              >
+                Interest Rate
+              </label>
+              <div
+                class="css-x3oexv"
+              >
+                <p
+                  class="chakra-text css-1njcsuf"
+                >
+                  0%
+                </p>
+                <div
+                  class="chakra-slider css-1jzw7c4"
+                  style="position: relative; user-select: none; outline: 0; padding-top: 0px; padding-bottom: 0px;"
+                  tabindex="-1"
+                >
+                  <div
+                    class="chakra-slider__track css-yobz93"
+                    id="slider-track-3"
+                    style="position: absolute; top: 50%; transform: translateY(-50%); width: 100%;"
+                  >
+                    <div
+                      class="css-fsxq0m"
+                    />
+                    <div
+                      class="chakra-slider__filled-track css-lbpcfc"
+                      style="position: absolute; top: 50%; transform: translateY(-50%); width: 40%; left: 0px;"
+                    />
+                  </div>
+                  <div
+                    aria-orientation="horizontal"
+                    aria-valuemax="50"
+                    aria-valuemin="0"
+                    aria-valuenow="20"
+                    class="chakra-slider__thumb css-t6tax2"
+                    data-testid="interest-rate-slider"
+                    id="slider-thumb-3"
+                    role="slider"
+                    style="position: absolute; user-select: none; left: calc(40% - 0px);"
+                    tabindex="0"
+                  />
+                  <input
+                    type="hidden"
+                    value="20"
+                  />
+                </div>
+                <p
+                  class="chakra-text css-1njcsuf"
+                >
+                  50%
+                </p>
+              </div>
+              <p
+                class="chakra-text css-1as9u30"
+              >
+                Current interest rate: 
+                <b>
+                  20
+                  %
+                </b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-6z87o"
+      >
+        <p
+          class="chakra-text css-nrvl4t"
+        >
+          Overview
+        </p>
+      </div>
+      <div
+        class="css-fo25ua"
+      >
+        <button
+          class="chakra-button css-a7myp6"
+          data-testid="previous-button"
+          type="button"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+   
+   
+</div>
+`;

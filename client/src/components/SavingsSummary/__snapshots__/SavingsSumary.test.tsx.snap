@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/SavingsSummary renders Savings summary component 1`] = `
+<div>
+   
+  <div
+    class="css-6z87o"
+  >
+    <p
+      class="chakra-text css-nrvl4t"
+    >
+      Savings Summary
+    </p>
+    <p
+      class="chakra-text css-1hgde6q"
+    >
+      Total Savings in 50 years
+    </p>
+    <p
+      class="chakra-text css-nrvl4t"
+    >
+      £ 
+    </p>
+  </div>
+   
+   
+</div>
+`;

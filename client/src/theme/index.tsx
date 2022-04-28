@@ -1,4 +1,4 @@
-const theme = {
+export const theme = {
     colors: {
         transparent: 'transparent',
         white: '#fff',
@@ -35,6 +35,7 @@ const theme = {
         md: '16px',
         lg: '18px',
         xl: '20px',
+        xxl: '36px',
     },
     fontWeights: {
         normal: 400,
@@ -79,5 +80,3 @@ const theme = {
         96: '24rem',
     },
 }
-
-export default theme
