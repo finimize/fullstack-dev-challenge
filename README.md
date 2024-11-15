@@ -22,32 +22,43 @@ Create a web-app that shows how much you can expect to make from your savings ov
 
 The app must satisfy the following Acceptance Criteria (ACs):
 
-* It should allow the user to vary the initial savings amount, monthly deposit and interest rate through the UI
-* It should display how much the user's initial savings amount will be worth over the next 50 years.
-* You can just return mock/dummy data over the simple Node server that has been set-up for you. You don't have to write any "calculations" for the backend, just return mock data to give whatever functionality you want in the frontend. You won't be scored on any server-side code!
+- It should allow the user to vary the initial savings amount, monthly deposit and interest rate through the UI
+- It should display how much the user's initial savings amount will be worth over the next 50 years.
+- You can just return mock/dummy data over the simple Node server that has been set-up for you. You don't have to write any "calculations" for the backend, just return mock data to give whatever functionality you want in the frontend. You won't be scored on any server-side code!
 
 ### Our Guidance
 
 The challenge should not take any more than 2-3 hours. You do not need to complete the challenge in one go.
 
 These are some qualities we value:
- * Well-modularised, robust and clearly-written code
- * Maintainability. Another team member should be able to easily work with your code after you've finished. 
- * Single Responsibility Principle
- * A well-organised codebase. You should think about how your codebase might grow as the project becomes more complex
+
+- Well-modularised, robust and clearly-written code
+- Maintainability. Another team member should be able to easily work with your code after you've finished.
+- Single Responsibility Principle
+- A well-organised codebase. You should think about how your codebase might grow as the project becomes more complex.
+- Simple, elegant but fun UX
 
 The UI has been started, as well as some simple setup logic on the server. How you connect these and structure logic is up to you! Feel free to make changes to any of the code provided (including the UI) if you wish.
 
-We have chosen to include a basic design system on the client, to give you an idea of how we like to build UIs. For this challenge we have used [Chakra JS](https://chakra-ui.com/docs/getting-started). 
+We have chosen to include a basic design system on the client, to give you an idea of how we like to build UIs. For this challenge we have used [Chakra JS](https://chakra-ui.com/docs/getting-started).
 
 Other than the above AC, feel free to take the challenge in any direction you feel best showcase your strengths!
 
 **Once complete**, please drop us a brief note (either an email, or in the readme somewhere) explaining:
-* How you approached the challenge
-* What bits of your solution you like
-* What bits of your solution you’d like to improve upon
+
+- How you approached the challenge
+- What bits of your solution you like
+- What bits of your solution you’d like to improve upon or would develop next
 
 Any images/gifs of the finished product would be helpful too!
+
+### Using AI
+
+We believe a modern developer workflow should make use of the best tools available, so we would encourage you to use AI tools for this challenge - hopefully it saves you some time!
+
+At the time of writing we are using [CursorAI](https://www.cursor.com/). It has a free trial so you're welcome to give it a go if you haven't already tried it.
+
+Bear in mind that when using AI, you are still responsibility for the quality of the output. The same principles mentioned above still apply. And we will still expect to be able to discuss the end solution, so please ensure you're familiar with what's been committed.
 
 ### Tooling
 
@@ -66,4 +77,3 @@ We believe strong TS typing will make your code much more robust.
 We believe Prettier makes your life easier! There is an example .prettierrc included in the `frontend` directory - feel free to tweak the settings if you'd prefer.
 
 You might need to give your IDE a nudge to pick the settings up - [here's an example](https://stackoverflow.com/a/58669550/4388938) of how to do that with VS Code
-
