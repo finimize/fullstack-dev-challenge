@@ -1,41 +1,58 @@
-import { ChartLegendOptions, ChartOptions } from 'chart.js'
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js'
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 import theme from '../theme'
 
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
+
 type Props = {
-    xAxisData: number[] | string[]
-    yAxisData: number[]
+    xAxisData: string[]
+    yAxisData: string[]
     title?: string
     xLabel?: string
     yLabel?: string
 }
 
 const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
-    const legendOptions: ChartLegendOptions = {
-        display: false,
-    }
-
-    const options: ChartOptions = {
-        title: {
-            display: !!title,
-            text: title,
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false,
+            },
+            title: {
+                display: !!title,
+                text: title,
+            },
         },
         scales: {
-            gridLines: { display: false },
-            yAxes: [
-                {
-                    scaleLabel: { display: !!yLabel, labelString: yLabel },
-                    gridLines: { display: false },
+            y: {
+                title: {
+                    display: !!yLabel,
+                    text: yLabel,
                 },
-            ],
-            xAxes: [
-                {
-                    scaleLabel: { display: !!xLabel, labelString: xLabel },
-                    ticks: { display: true },
-                    gridLines: { display: false },
+                grid: {
+                    display: false,
                 },
-            ],
+            },
+            x: {
+                title: {
+                    display: !!xLabel,
+                    text: xLabel,
+                },
+                grid: {
+                    display: false,
+                },
+            },
         },
     }
 
@@ -52,7 +69,6 @@ const LineChart = ({ xAxisData, yAxisData, title, xLabel, yLabel }: Props) => {
                 ],
             }}
             options={options}
-            legend={legendOptions}
         />
     )
 }

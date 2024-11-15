@@ -9,7 +9,7 @@ const NavHeader = () => (
         justifyContent="space-between"
         px={6}
         py={4}
-        bg="blue100"
+        bg="blue700"
     >
         <Image src={images.fullBrandLogo} alt="Finimize" width="160px" />
     </Box>
