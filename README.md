@@ -1,4 +1,4 @@
-# Finimize Frontend Development Challenge
+# Finimize Development Challenge
 
 This repo is intended to be forked and uploaded to your own Github account in
 order to form the submission for the challenge. Once cloned, it will give you a basic server with a React app, so you don't have to spend time writing boilerplate code. Feel free to make any changes you wish - the existing code is purely intended to get you going faster.
