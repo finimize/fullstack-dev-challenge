@@ -41,7 +41,15 @@ These are some qualities we value:
 
 The UI has been started, as well as some simple setup logic on the server. How you connect these and structure logic is up to you! Feel free to make changes to any of the code provided (including the UI) if you wish.
 
-We have chosen to include a basic design system on the client, to give you an idea of how we like to build UIs. For this challenge we have used [Chakra JS](https://chakra-ui.com/docs/getting-started).
+We have chosen to include a basic design system on the client, to give you an idea of how we like to build UIs. For this challenge we have used [Chakra JS](https://chakra-ui.com/docs/getting-started). You can pass in styling props to the components including margins/padding etc like this:
+
+```
+// This produces a Box (styled div) with a top margin of 2, padding of 3 and a black background colour.
+// Colours and spacing properties are defined in `themes/index.tsx`
+<Box mt={2} p={3} bg='black'>
+```
+
+Although the API might be relatively straightforward, please try and write the API code as if you were building something more complex. We would like to gain an idea of how you would go about structuring API code.
 
 Other than the above AC, feel free to take the challenge in any direction you feel best showcase your strengths!
 
