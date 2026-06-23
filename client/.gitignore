@@ -5,11 +5,20 @@
 /.pnp
 .pnp.js
 
+# yarn (berry) — commit config + lockfile, ignore cache/state
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # testing
 /coverage
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
