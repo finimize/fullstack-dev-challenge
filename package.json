@@ -2,23 +2,23 @@
   "name": "fullstack-dev-challenge",
   "version": "0.0.1",
   "private": true,
+  "packageManager": "yarn@4.10.3",
   "dependencies": {
-    "express": "^4.21.0"
+    "express": "^5.1.0"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "ts-node server.ts",
+    "start": "concurrently \"yarn server\" \"yarn client\"",
+    "server": "tsx server.ts",
     "types": "tsc",
     "client": "node scripts/start-client.js",
-    "install": "cd client && yarn install && cd .."
+    "postinstall": "cd client && yarn install"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.0.0",
-    "concurrently": "^9.0.0",
-    "mocha": "^10.3.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.0"
+    "concurrently": "^9.2.0",
+    "mocha": "^11.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^6.0.0"
   }
 }

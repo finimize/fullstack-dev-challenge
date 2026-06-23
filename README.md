@@ -5,13 +5,19 @@ order to form the submission for the challenge. Once cloned, it will give you a 
 
 ## Run Instructions
 
-To run the app, `cd` into the project root directory and run `yarn install` & `yarn start`
-(install Yarn [here](https://yarnpkg.com/en/docs/install)).
+This repo uses **Yarn 4 (Berry)** via Corepack on **Node 22** (see `.nvmrc`). Enable
+Corepack once so the pinned Yarn version is used automatically:
 
-Depending on your environment, you might need to install concurrently / Typescript globally.
+```
+corepack enable
+```
+
+To run the app, `cd` into the project root directory and run `yarn install` & `yarn start`.
+The root `yarn install` also installs the client's dependencies for you.
 
 There is one basic test written in the client, which you can run by performing
-`cd client` and then `yarn test`. If you want to add new client tests you can use Jest.
+`cd client` and then `yarn test`. Client tests use [Vitest](https://vitest.dev/) +
+React Testing Library (run `yarn test:watch` for watch mode).
 
 Mocha has been installed on the server to allow you to create server tests if you wish,
 although none have been written yet.
