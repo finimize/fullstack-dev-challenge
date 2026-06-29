@@ -72,7 +72,7 @@ Any images/gifs of the finished product would be helpful too!
 
 We believe a modern developer workflow should make use of the best tools available, so we would encourage you to use AI tools for this challenge - hopefully it saves you some time!
 
-At the time of writing we are using [CursorAI](https://www.cursor.com/). It has a free trial so you're welcome to give it a go if you haven't already tried it.
+At the time of writing we are using Claude code, so you are welcome to use that or something similar.
 
 Bear in mind that when using AI, you are still responsibility for the quality of the output. The same principles mentioned above still apply. And we will still expect to be able to discuss the end solution, so please ensure you're familiar with what's been committed.
 
