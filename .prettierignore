@@ -1,0 +1,9 @@
+node_modules
+client/node_modules
+.claude
+client/dist
+client/build
+dist
+build
+yarn.lock
+client/yarn.lock

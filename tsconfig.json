@@ -1,31 +1,21 @@
 {
     "compilerOptions": {
-      "lib": [
-        "ES2022"
-      ],
-      "emitDecoratorMetadata": true,
-      "esModuleInterop": true,
-      "experimentalDecorators": true,
-      "strictPropertyInitialization": false,
-      "importHelpers": true,
-      "module": "nodenext",
-      "outDir": "dist",
-      "removeComments": true,
-      "sourceMap": true,
-      "strict": true,
-      "target": "ES2022",
-      "moduleResolution": "nodenext",
-      "types": [
-        "node"
-      ],
-      "typeRoots": [
-        "node_modules/@types"
-      ]
+        "lib": ["ES2022"],
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "strictPropertyInitialization": false,
+        "importHelpers": true,
+        "module": "nodenext",
+        "outDir": "dist",
+        "removeComments": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "ES2022",
+        "moduleResolution": "nodenext",
+        "types": ["node"],
+        "typeRoots": ["node_modules/@types"]
     },
-    "include": [
-      "./**/*.ts",
-    ],
-    "exclude": [
-      "./client"
-    ]
-   }
+    "include": ["./**/*.ts"],
+    "exclude": ["./client"]
+}

@@ -1,14 +1,9 @@
-import express from "express";
+import { createApp } from './server/app.js'
 
-const app = express();
+const app = createApp()
+const port = Number(process.env.PORT) || 3001
 
-app.set("port", process.env.PORT || 3001);
-
-// Express only serves static assets in production 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-app.listen(app.get("port"), () => {
-  console.log(`Find the server at: http://localhost:${app.get("port")}/`); // eslint-disable-line no-console
-});
+app.listen(port, () => {
+    // eslint-disable-next-line no-console
+    console.log(`Find the server at: http://localhost:${port}/`)
+})

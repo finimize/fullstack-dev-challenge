@@ -1,24 +1,29 @@
 {
-  "name": "fullstack-dev-challenge",
-  "version": "0.0.1",
-  "private": true,
-  "packageManager": "yarn@4.10.3",
-  "dependencies": {
-    "express": "^5.1.0"
-  },
-  "scripts": {
-    "start": "concurrently \"yarn server\" \"yarn client\"",
-    "server": "tsx server.ts",
-    "types": "tsc",
-    "client": "node scripts/start-client.js",
-    "postinstall": "cd client && yarn install"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.0.0",
-    "concurrently": "^9.2.0",
-    "mocha": "^11.0.0",
-    "tsx": "^4.20.0",
-    "typescript": "^6.0.0"
-  }
+    "name": "fullstack-dev-challenge",
+    "version": "0.0.1",
+    "private": true,
+    "packageManager": "yarn@4.10.3",
+    "dependencies": {
+        "express": "^5.1.0"
+    },
+    "scripts": {
+        "start": "concurrently \"yarn server\" \"yarn client\"",
+        "server": "tsx server.ts",
+        "types": "tsc",
+        "test:server": "node --import tsx --test server/test/compoundInterest.test.ts server/test/projections.test.ts",
+        "client": "node scripts/start-client.js",
+        "format": "prettier --write .",
+        "postinstall": "cd client && yarn install"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.0.0",
+        "@types/supertest": "^7.2.1",
+        "concurrently": "^9.2.0",
+        "mocha": "^11.0.0",
+        "prettier": "^3.4.2",
+        "supertest": "^7.2.2",
+        "tsx": "^4.20.0",
+        "typescript": "^6.0.0"
+    }
 }
